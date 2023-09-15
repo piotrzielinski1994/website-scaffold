@@ -9,6 +9,10 @@ services:
     user: "${UID:-1000}:${GID:-1000}"
     volumes:
       - ./frontend/:/app
+    env_file:
+      - .env
+    environment:
+      BACKEND_URL: http://backend:${BACKEND_PORT:-1337}
     depends_on:
       - backend
     ports:
@@ -28,7 +32,7 @@ services:
     depends_on:
       - db
     ports:
-      - 1337:1337
+      - ${BACKEND_PORT:-1337}:${BACKEND_PORT:-1337}
 
   db:
     image: postgres:12

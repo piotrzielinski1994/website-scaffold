@@ -1,0 +1,8 @@
+{
+  "name": "shared",
+  "version": "0.1.0",
+  "main": "./types/page.types.ts",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}

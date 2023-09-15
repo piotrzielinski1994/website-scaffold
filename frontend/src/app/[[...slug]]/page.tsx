@@ -1,24 +1,21 @@
+import { getPages } from "@/components/templates/page/page.helpers";
+
 export default function Asd() {
   return <div>Page</div>
 }
 
 
 export async function getStaticPaths() {
-  const pages = Array.from({ length: 5 }, (_, i) => i).map((id: number) => ({
-    id,
-    title: `Title ${id}`,
-    content: `Content ${id}`,
-    slug: [`${id}`]
-  }));
+  const pages = await getPages();
 
-  const paths = pages.map((page: any) => ({
-    params: {
-      id: page.id,
-      slug: page.slug
-    },
-  }));
-
-  // console.log('@@@ paths | ', paths);
-
-  return { paths, fallback: false }
+  return {
+    paths: pages.map((page, i) => {
+      return {
+        params: {
+          slug: [page.attributes.slug],
+        }
+      }
+    }),
+    fallback: false
+  };
 }

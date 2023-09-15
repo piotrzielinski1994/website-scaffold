@@ -2,6 +2,11 @@
   "name": "website-scaffold",
   "version": "0.1.0",
   "description": "Base scaffold for websites with CMS",
+  "workspaces": [
+    "shared",
+    "backend",
+    "frontend"
+  ],
   "scripts": {
     "setup": "ln -s docker-compose.dev.yaml docker-compose.yaml && ln -s .env.example .env"
   },
