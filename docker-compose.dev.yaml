@@ -19,6 +19,8 @@ services:
     command: bash -c "npm ci && npm start"
     volumes:
       - ./backend/:/app
+    env_file:
+      - .env
     depends_on:
       - db
     ports:
@@ -27,9 +29,9 @@ services:
   db:
     image: postgres:12
     environment:
-      POSTGRES_DB: website-scaffold
-      POSTGRES_USER: website-scaffold
-      POSTGRES_PASSWORD: website-scaffold
+      POSTGRES_DB: ${BACKEND_DATABASE_NAME:-website-scaffold}
+      POSTGRES_USER: ${BACKEND_DATABASE_USERNAME:-website-scaffold}
+      POSTGRES_PASSWORD: ${BACKEND_DATABASE_PASSWORD:-website-scaffold}
     volumes:
       - db-volume:/var/lib/postgresql/data
     ports:
