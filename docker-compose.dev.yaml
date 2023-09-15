@@ -6,6 +6,7 @@ services:
     image: node:20
     working_dir: /app
     command: bash -c "npm ci && npm start"
+    user: "${UID:-1000}:${GID:-1000}"
     volumes:
       - ./frontend/:/app
     depends_on:
@@ -17,6 +18,7 @@ services:
     image: node:20
     working_dir: /app
     command: bash -c "npm ci && npm start"
+    user: "${UID:-1000}:${GID:-1000}"
     volumes:
       - ./backend/:/app
     env_file:
