@@ -5,7 +5,7 @@ services:
   frontend:
     image: node:20
     working_dir: /app
-    command: bash -c "npm ci && npm start"
+    command: bash -c "npm i && npm start"
     user: "${UID:-1000}:${GID:-1000}"
     volumes:
       - ./frontend/:/app
@@ -21,7 +21,7 @@ services:
   backend:
     image: node:20
     working_dir: /app
-    command: bash -c "npm ci && npm start"
+    command: bash -c "npm i && npm start"
     user: "${UID:-1000}:${GID:-1000}"
     volumes:
       - ./backend/:/app

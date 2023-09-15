@@ -10,7 +10,7 @@ const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
 });
 
 const cmsClient = {
-  request: (query: string) => client.query({ query } as any),
+  request: (query: string, variables?: Record<string, any>) => client.query({ query, variables } as any),
   query: gql,
 } as unknown as CmsClient;
 

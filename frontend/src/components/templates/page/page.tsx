@@ -1,9 +1,8 @@
 import React from 'react';
-import { headers } from 'next/headers';
+import { PageTemplateProps } from './page.types';
 
-const Page = () => {
-  const path = headers().get('x-invoke-path');
-  return <div>Page: {path}</div>
+const PageTemplate = ({ page }: PageTemplateProps) => {
+  return <div>Page: {page.attributes.title}</div>
 }
 
-export default Page;
+export default PageTemplate;
