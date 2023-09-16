@@ -1,15 +1,6 @@
 export default [
   'strapi::errors',
-  {
-    name: "strapi::security",
-    config: {
-      contentSecurityPolicy: {
-        directives: {
-          "frame-src": [ "http://localhost:*", "self", "sandbox.embed.apollographql.com" ],
-        },
-      },
-    },
-  },
+  'strapi::security',
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::logger',

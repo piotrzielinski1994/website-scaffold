@@ -1,11 +1,11 @@
-export default {
-  "graphql": {
+export default ({ env }) => ({
+ 'transformer': {
     enabled: true,
     config: {
-      playgroundAlways: false,
-    },
+      responseTransforms: {
+        removeAttributesKey: true,
+        removeDataKey: true,
+      },
+    }
   },
-  "apollo-sandbox": {
-    enabled: process.env.NODE_ENV !== 'production'
-  },
-};
+});
