@@ -5,45 +5,52 @@ services:
   frontend:
     image: node:20
     working_dir: /app
-    command: bash -c "npm i && npm start"
+    command: bash -c "npm install && npm start"
     user: "${UID:-1000}:${GID:-1000}"
     volumes:
       - ./frontend/:/app
     env_file:
       - .env
     environment:
-      BACKEND_URL: http://backend:${BACKEND_PORT:-1337}
+      BACKEND_URL: ${BACKEND_PUBLIC_URL:-http://localhost:3000}
     depends_on:
       - backend
     ports:
-      - 3000:3000
+      - ${FRONTEND_PORT:-3001}:${FRONTEND_PORT:-3001}
 
   backend:
     image: node:20
     working_dir: /app
-    command: bash -c "npm i && npm start"
+    command: bash -c "npm install && npm run setup && npm start"
     user: "${UID:-1000}:${GID:-1000}"
     volumes:
       - ./backend/:/app
-    env_file:
-      - .env
     environment:
-      BACKEND_DATABASE_HOST: db
+      HOST: ${BACKEND_HOST:-0.0.0.0}
+      PORT: ${BACKEND_PORT:-3000}
+      KEY: ${BACKEND_KEY:-website-scaffold}
+      SECRET: ${BACKEND_SECRET:-website-scaffold}
+      DB_CLIENT: pg
+      DB_HOST: db
+      DB_PORT: ${DATABASE_PORT:-5432}
+      DB_DATABASE: ${DATABASE_NAME:-5432}
+      DB_USER: ${DATABASE_USERNAME:-5432}
+      DB_PASSWORD: ${DATABASE_PASSWORD:-5432}
     depends_on:
       - db
     ports:
-      - ${BACKEND_PORT:-1337}:${BACKEND_PORT:-1337}
+      - ${BACKEND_PORT:-3000}:${BACKEND_PORT:-3000}
 
   db:
     image: postgres:12
     environment:
-      POSTGRES_DB: ${BACKEND_DATABASE_NAME:-website-scaffold}
-      POSTGRES_USER: ${BACKEND_DATABASE_USERNAME:-website-scaffold}
-      POSTGRES_PASSWORD: ${BACKEND_DATABASE_PASSWORD:-website-scaffold}
+      POSTGRES_DB: ${DATABASE_NAME:-website-scaffold}
+      POSTGRES_USER: ${DATABASE_USERNAME:-website-scaffold}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-website-scaffold}
     volumes:
       - db-volume:/var/lib/postgresql/data
     ports:
-      - 5432:5432
+      - ${DATABASE_PORT:-5432}:${DATABASE_PORT:-5432}
 
 volumes:
   db-volume:

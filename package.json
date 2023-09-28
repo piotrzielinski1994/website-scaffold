@@ -8,6 +8,7 @@
     "frontend"
   ],
   "scripts": {
+    "start": "docker-compose up",
     "setup": "ln -s docker-compose.dev.yaml docker-compose.yaml && ln -s .env.example .env"
   },
   "keywords": [],

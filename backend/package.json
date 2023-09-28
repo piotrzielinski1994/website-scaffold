@@ -1,31 +1,17 @@
 {
   "name": "backend",
-  "private": true,
-  "version": "0.1.0",
-  "description": "A Strapi application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "strapi develop",
-    "serve": "strapi serve",
-    "build": "strapi build",
-    "strapi": "strapi"
+    "start": "directus start",
+    "setup": "directus bootstrap"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "@strapi/plugin-graphql": "^4.13.6",
-    "@strapi/plugin-i18n": "4.13.6",
-    "@strapi/plugin-users-permissions": "4.13.6",
-    "@strapi/strapi": "4.13.6",
-    "pg": "8.8.0",
-    "strapi-plugin-transformer": "^3.1.1"
-  },
-  "author": {
-    "name": "A Strapi developer"
-  },
-  "strapi": {
-    "uuid": "ef44359f-9c67-487b-b9db-2e3d9f586f45"
-  },
-  "engines": {
-    "node": ">=16.0.0 <=20.x.x",
-    "npm": ">=6.0.0"
-  },
-  "license": "MIT"
+    "directus": "^10.6.3",
+    "pg": "^8.11.3"
+  }
 }
