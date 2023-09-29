@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "start": "docker-compose up",
+    "reset": "docker-compose down --volumes --remove-orphans",
     "setup": "ln -s docker-compose.dev.yaml docker-compose.yaml && ln -s .env.example .env"
   },
   "keywords": [],
