@@ -12,11 +12,12 @@ services:
     env_file:
       - .env
     environment:
-      BACKEND_URL: ${BACKEND_PUBLIC_URL:-http://localhost:3000}
+      PORT: ${FRONTEND_PORT:-3002}
+      BACKEND_URL: ${BACKEND_PUBLIC_URL:-http://localhost:3001}
     depends_on:
       - backend
     ports:
-      - ${FRONTEND_PORT:-3001}:${FRONTEND_PORT:-3001}
+      - ${FRONTEND_PORT:-3002}:${FRONTEND_PORT:-3002}
 
   backend:
     image: node:20
@@ -27,30 +28,33 @@ services:
       - ./backend/:/app
     environment:
       HOST: ${BACKEND_HOST:-0.0.0.0}
-      PORT: ${BACKEND_PORT:-3000}
+      PORT: ${BACKEND_PORT:-3001}
       KEY: ${BACKEND_KEY:-website-scaffold}
       SECRET: ${BACKEND_SECRET:-website-scaffold}
       DB_CLIENT: pg
       DB_HOST: db
-      DB_PORT: ${DATABASE_PORT:-5432}
-      DB_DATABASE: ${DATABASE_NAME:-5432}
-      DB_USER: ${DATABASE_USERNAME:-5432}
-      DB_PASSWORD: ${DATABASE_PASSWORD:-5432}
+      DB_PORT: ${DATABASE_PORT:-3000}
+      DB_DATABASE: ${DATABASE_NAME:-website-scaffold}
+      DB_USER: ${DATABASE_USERNAME:-website-scaffold}
+      DB_PASSWORD: ${DATABASE_PASSWORD:-website-scaffold}
+      ADMIN_EMAIL: ${BACKEND_INITIAL_ADMIN_EMAIL:-admin@website-scaffold.com}
+      ADMIN_PASSWORD: ${BACKEND_INITIAL_ADMIN_PASSWORD:-website-scaffold}
     depends_on:
       - db
     ports:
-      - ${BACKEND_PORT:-3000}:${BACKEND_PORT:-3000}
+      - ${BACKEND_PORT:-3001}:${BACKEND_PORT:-3001}
 
   db:
     image: postgres:12
     environment:
+      PGPORT: ${DATABASE_PORT:-3000}
       POSTGRES_DB: ${DATABASE_NAME:-website-scaffold}
       POSTGRES_USER: ${DATABASE_USERNAME:-website-scaffold}
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-website-scaffold}
     volumes:
       - db-volume:/var/lib/postgresql/data
     ports:
-      - ${DATABASE_PORT:-5432}:${DATABASE_PORT:-5432}
+      - ${DATABASE_PORT:-3000}:${DATABASE_PORT:-3000}
 
 volumes:
   db-volume:
