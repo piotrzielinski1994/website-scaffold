@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "directus start",
-    "setup": "directus bootstrap"
+    "setup": "directus bootstrap && directus schema apply ./schema.json -y",
+    "enter_shell": "docker-compose exec -it backend bash",
+    "schema": "npx directus schema snapshot --format=\"json\" ./schema.json"
   },
   "keywords": [],
   "author": "",
