@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavbarProps } from './navbar.types';
+import Link from 'next/link';
 
 const Navbar = ({ items }: NavbarProps) => {
   return <header>
@@ -7,7 +8,7 @@ const Navbar = ({ items }: NavbarProps) => {
       <ul>
         {items.map(({ label, href }) => {
           return <li key={href}>
-            <a href={href}>{label}</a>
+            <Link href={href}>{label}</Link>
           </li>
         })}
       </ul>

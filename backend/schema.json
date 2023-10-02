@@ -168,14 +168,14 @@
     },
     {
       "collection": "pages",
-      "field": "parent_page_id",
+      "field": "parent_page",
       "type": "uuid",
       "meta": {
         "collection": "pages",
         "conditions": null,
         "display": null,
         "display_options": null,
-        "field": "parent_page_id",
+        "field": "parent_page",
         "group": null,
         "hidden": false,
         "interface": "select-dropdown-m2o",
@@ -191,7 +191,7 @@
         "width": "full"
       },
       "schema": {
-        "name": "parent_page_id",
+        "name": "parent_page",
         "table": "pages",
         "data_type": "uuid",
         "default_value": null,
@@ -496,12 +496,12 @@
   "relations": [
     {
       "collection": "pages",
-      "field": "parent_page_id",
+      "field": "parent_page",
       "related_collection": "pages",
       "meta": {
         "junction_field": null,
         "many_collection": "pages",
-        "many_field": "parent_page_id",
+        "many_field": "parent_page",
         "one_allowed_collections": null,
         "one_collection": "pages",
         "one_collection_field": null,
@@ -511,10 +511,10 @@
       },
       "schema": {
         "table": "pages",
-        "column": "parent_page_id",
+        "column": "parent_page",
         "foreign_key_table": "pages",
         "foreign_key_column": "id",
-        "constraint_name": "pages_parent_page_id_foreign",
+        "constraint_name": "pages_parent_page_foreign",
         "on_update": "NO ACTION",
         "on_delete": "NO ACTION"
       }

@@ -4,19 +4,18 @@ import { getPages } from '@/api/pages/pages.requests';
 import PageTemplate from '@/components/templates/page/page';
 import { notFound } from 'next/navigation';
 import Layout from '@/components/layouts/layout/layout';
-import { pagesToPagePerPath } from '@/api/pages/pages.transformers';
+import { pagesToMenuItems } from '@/components/layouts/navbar/navbar.transformers';
 
 const Page = async ({ params }: PageProps) => {
-  const path = `/${params.segments?.join('/') ?? ''}`;
+  const path = `/${params.slugs?.join('/') ?? ''}`;
   const pages = await getPages();
-  const pagesPerPath = pagesToPagePerPath(pages);
-  const page = pagesPerPath[path];
-  
-  if (page === undefined) {
-    return notFound();
-  }
+  const page = Object.entries(pages)
+    .find(([_, page]) => page.path === path)
+    ?.[1];
 
-  return <Layout layout='default' navbar={{ items: [] }} >
+  if (page === undefined) return notFound();
+
+  return <Layout layout='default' navbar={{ items: pagesToMenuItems(pages) }} >
     <PageTemplate page={page} />
   </Layout>;
 };

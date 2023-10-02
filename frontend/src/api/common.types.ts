@@ -10,14 +10,12 @@ export interface WithTimestamps {
 
 // ==========================================
 
-export type PublicationStatus = 'published' | 'draft' | 'archieved';
-
 export interface ApiWithPublicationStatus {
-  status: PublicationStatus;
+  status: 'published' | 'draft' | 'archieved';
 }
 
 export interface WithPublicationStatus {
-  status: PublicationStatus;
+  status: ApiWithPublicationStatus['status'];
 }
 
 // ==========================================

@@ -2,7 +2,8 @@ import { ApiWithPublicationStatus, ApiWithTimestamps, WithPublicationStatus, Wit
 
 export interface ApiPage extends ApiWithTimestamps, ApiWithPublicationStatus {
   id: string;
-  parent_page_id: string | null;
+  parent_page: ApiPage['id'] | null;
+  subpages: ApiPage['id'][];
   sort: number | null;
   is_visible_in_navbar: boolean;
   slug: string | null;
@@ -10,10 +11,14 @@ export interface ApiPage extends ApiWithTimestamps, ApiWithPublicationStatus {
 }
 
 export interface Page extends WithTimestamps, WithPublicationStatus {
-  id: string;
-  parentPageId: string | null;
-  sort: number | null;
-  isVisibleInNavbar: boolean;
-  slug: string | null;
-  title: string;
+  id: ApiPage['id'];
+  parentPage: ApiPage['parent_page'];
+  subpages: ApiPage['subpages'];
+  sort: ApiPage['sort'];
+  isVisibleInNavbar: ApiPage['is_visible_in_navbar'];
+  slug: string;
+  path: string;
+  title: ApiPage['title'];
 }
+
+export type Pages = Record<Page['id'], Page>; 
