@@ -6,7 +6,8 @@
     "start": "next dev",
     "build": "next build",
     "serve": "next serve",
-    "lint": "next lint"
+    "lint": "next lint",
+    "enter_shell": "docker-compose exec -it -u root frontend bash"
   },
   "dependencies": {
     "@apollo/client": "^3.8.3",

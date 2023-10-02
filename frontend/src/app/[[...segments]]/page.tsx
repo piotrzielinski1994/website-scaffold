@@ -1,18 +1,18 @@
-import { getPage, getPages } from "@/components/templates/page/page.helpers";
-import type { Page } from "@/shared/types/page.types";
-import { PageProps } from "./page.types";
-import PageTemplate from "@/components/templates/page/page";
+import type { Page } from '@/shared/types/page.types';
+import { PageProps } from './page.types';
+import { getPageByPath } from '@/api/pages/pages.requests';
+import PageTemplate from '@/components/templates/page/page';
 import { notFound } from 'next/navigation';
 
 const Page = async ({ params }: PageProps) => {
-  const slug = params.segments?.at(-1) ?? '';
-  const page = await getPage(slug);
+  const path = `/${params.segments?.join('/') ?? ''}`;
+  const page = await getPageByPath(path);
   
   if (page === undefined) {
     return notFound();
   }
 
   return <PageTemplate page={page} />;
-}
+};
 
 export default Page;

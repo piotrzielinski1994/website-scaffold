@@ -9,11 +9,10 @@ services:
     user: "${UID:-1000}:${GID:-1000}"
     volumes:
       - ./frontend/:/app
-    env_file:
-      - .env
     environment:
       PORT: ${FRONTEND_PORT:-3002}
-      BACKEND_URL: ${BACKEND_PUBLIC_URL:-http://localhost:3001}
+      API_URL: http://backend:${BACKEND_PORT:-3001}
+      API_TOKEN: ${FRONTEND_API_KEY:-website-scaffold}
     depends_on:
       - backend
     ports:

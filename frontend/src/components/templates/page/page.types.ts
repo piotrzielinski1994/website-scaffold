@@ -1,4 +1,4 @@
-import { Page } from "@/shared/types/page.types";
+import { Page } from "@/api/pages/pages.types";
 
 export interface PageTemplateProps {
   page: Page;
