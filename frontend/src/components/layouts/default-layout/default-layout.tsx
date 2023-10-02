@@ -1,7 +1,13 @@
-const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
+import { CommonLayoutProps } from "../layout/layout.types";
+import Navbar from "../navbar/navbar";
+
+const DefaultLayout = ({ children, navbar }: CommonLayoutProps) => {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar {...navbar}/>
+        {children}
+      </body>
     </html>
   )
 }

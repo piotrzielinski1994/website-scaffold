@@ -1,12 +1,17 @@
 import cmsClient from "../cms-client/cms-client";
 import { ApiPage, Page } from "./pages.types";
-import { getPagePath } from "./pages.helpers";
 import { apiPageToPage } from "./pages.transformers";
+import { takePagePath } from "./pages.helpers";
+
+export const getPages = async (): Promise<Page[]> => {
+  return (await cmsClient.get<ApiPage[]>('/items/pages')).map(apiPageToPage);
+};
 
 export const getPageByPath = async (path: string): Promise<Page> => {
-  const pages = (await cmsClient.get<ApiPage[]>('/items/pages')).map(apiPageToPage);
+  const apiPages = (await cmsClient.get<ApiPage[]>('/items/pages'));
+  const pages = apiPages.map(apiPageToPage);
   const pathToPage: Record<string, Page> = pages.reduce((acc, page) => {
-    const pagePath = getPagePath(page.id, pages);
+    const pagePath = takePagePath(pages, page.id);
     return { ...acc, [pagePath]: page };
   }, {});
 
