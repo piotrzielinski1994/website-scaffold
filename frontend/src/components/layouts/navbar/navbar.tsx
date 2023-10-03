@@ -1,16 +1,12 @@
 import React from 'react';
 import { NavbarProps } from './navbar.types';
-import Link from 'next/link';
+import NavItem from './components/nav-item/nav-item';
 
 const Navbar = ({ items }: NavbarProps) => {
   return <header>
     <nav>
       <ul>
-        {items.map(({ label, href }) => {
-          return <li key={href}>
-            <Link href={href}>{label}</Link>
-          </li>
-        })}
+        {items.map((item) => <NavItem key={item.href} {...item}/>)}
       </ul>
     </nav>
   </header>
