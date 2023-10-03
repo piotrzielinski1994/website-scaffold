@@ -1,5 +1,5 @@
 import { CommonLayoutProps } from "../layout/layout.types";
-import Navbar from "../navbar/navbar";
+import Navbar from "../../shared/layout/navbar/navbar";
 
 const DefaultLayout = ({ children, navbar }: CommonLayoutProps) => {
   return (

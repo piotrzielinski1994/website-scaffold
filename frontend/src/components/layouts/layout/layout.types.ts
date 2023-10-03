@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { NavbarProps } from "../navbar/navbar.types";
+import { NavbarProps } from "../../shared/layout/navbar/navbar.types";
 
 export interface LayoutProps extends CommonLayoutProps {
   layout: 'default';

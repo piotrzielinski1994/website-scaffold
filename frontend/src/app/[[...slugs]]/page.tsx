@@ -4,7 +4,7 @@ import { getPages } from '@/api/pages/pages.requests';
 import PageTemplate from '@/components/templates/page/page';
 import { notFound } from 'next/navigation';
 import Layout from '@/components/layouts/layout/layout';
-import { pagesToMenuItems } from '@/components/layouts/navbar/navbar.transformers';
+import { pagesToMenuItems } from '@/components/shared/layout/navbar/navbar.transformers';
 import { takePageByPath } from '@/api/pages/pages.helpers';
 
 const Page = async ({ params }: PageProps) => {
