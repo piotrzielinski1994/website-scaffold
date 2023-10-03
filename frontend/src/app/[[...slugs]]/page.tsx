@@ -5,13 +5,12 @@ import PageTemplate from '@/components/templates/page/page';
 import { notFound } from 'next/navigation';
 import Layout from '@/components/layouts/layout/layout';
 import { pagesToMenuItems } from '@/components/layouts/navbar/navbar.transformers';
+import { takePageByPath } from '@/api/pages/pages.helpers';
 
 const Page = async ({ params }: PageProps) => {
   const path = `/${params.slugs?.join('/') ?? ''}`;
   const pages = await getPages();
-  const page = Object.entries(pages)
-    .find(([_, page]) => page.path === path)
-    ?.[1];
+  const page = takePageByPath(pages, path);
 
   if (page === undefined) return notFound();
 

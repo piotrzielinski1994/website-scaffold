@@ -1,10 +1,9 @@
 import { Page, Pages } from "@/api/pages/pages.types";
 import { MenuItem } from "./navbar.types";
+import { takePageByParentId } from "@/api/pages/pages.helpers";
 
 export const pagesToMenuItems = (pages: Pages): MenuItem[] => {
-  const rootPage = Object.entries(pages)
-    .find(([_, page]) => page.parentPage === null)
-    ?.[1];
+  const rootPage = takePageByParentId(pages, null);
   if (!rootPage) return [];
 
   return rootPage.subpages.map(pageIdToMenuItem(pages));
