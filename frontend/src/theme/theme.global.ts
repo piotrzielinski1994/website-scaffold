@@ -5,8 +5,17 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    font-size: ${({ theme }) => theme.font.size};
+  }
+
   body {
     margin: 0;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: grid;
   }
 `;
 

@@ -16,7 +16,10 @@ const Layout = ({ layout, ...props }: LayoutProps) => {
 
   return (
     <html lang="en">
-      <body>{template}</body>
+      <body>
+        <div id='root'>{template}</div>
+        <div id='portal'></div>
+      </body>
     </html>
   );
 };

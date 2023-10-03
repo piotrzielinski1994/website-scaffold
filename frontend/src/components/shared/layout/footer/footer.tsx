@@ -1,9 +1,9 @@
 import React from 'react';
-import Section from '@/components/shared/layout/section/section';
 import { FooterProps } from './footer.types';
+import S from './footer.styles';
 
 const Footer = ({ children }: FooterProps) => {
-  return <Section htmlTag='footer'>{children}</Section>
+  return <S.Wrapper>{children}</S.Wrapper>
 }
 
 export default Footer;
