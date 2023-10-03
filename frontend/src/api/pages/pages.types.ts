@@ -7,6 +7,7 @@ export interface ApiPage extends ApiWithTimestamps, ApiWithPublicationStatus {
   sort: number | null;
   is_visible_in_navbar: boolean;
   slug: string | null;
+  layout: 'default';
   title: string;
 }
 
@@ -18,6 +19,7 @@ export interface Page extends WithTimestamps, WithPublicationStatus {
   isVisibleInNavbar: ApiPage['is_visible_in_navbar'];
   slug: string;
   path: string;
+  layout: ApiPage['layout'];
   title: ApiPage['title'];
 }
 
