@@ -14,7 +14,7 @@ const Page = async ({ params }: PageProps) => {
 
   if (page === undefined) return notFound();
 
-  return <Layout layout='default' navbar={{ items: pagesToMenuItems(pages) }} >
+  return <Layout layout={page.layout} navbar={{ items: pagesToMenuItems(pages) }} >
     <PageTemplate page={page} />
   </Layout>;
 };

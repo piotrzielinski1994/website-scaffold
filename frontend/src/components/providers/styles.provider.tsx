@@ -3,20 +3,31 @@
 import React, { PropsWithChildren, createContext, useMemo, useState } from 'react';
 import { useServerInsertedHTML } from 'next/navigation';
 import { ServerStyleSheet, StyleSheetManager, ThemeProvider } from 'styled-components';
-import lightTheme from '@/theme/light.theme';
-import { Theme } from '@/theme/theme.types';
+import { Theme, ThemeSetter } from '@/theme/theme.types';
+import GlobalStyles from '@/theme/theme.global';
+import defaultTheme from '@/theme/theme';
 
-const ThemeSetterContext = createContext<(theme: Theme) => void>(() => undefined);
+const ThemeSetterContext = createContext<ThemeSetter>({
+  setColorPalette: () => undefined,
+  setFontSize: () => undefined,
+});
 
 const StylesProvider = ({ children }: PropsWithChildren) => {
   // Only create stylesheet once with lazy initial state
   // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
   const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet());
-  const [theme, setTheme] = useState(lightTheme);
+  const [theme, setTheme] = useState(defaultTheme);
+  const setFontSize = (fontSize: Theme['font']['size']) => {
+    setTheme((prevTheme) => ({ ...prevTheme, font: { ...prevTheme.font, size: fontSize }}));
+  }
+  const setColorPalette = (palette: Theme['color']) => {
+    setTheme((prevTheme) => ({ ...prevTheme, color: palette }));
+  }
   const content = useMemo(() => {
     return (
       <ThemeProvider theme={theme}>
-        <ThemeSetterContext.Provider value={setTheme}>{children}</ThemeSetterContext.Provider>
+        <GlobalStyles />
+        <ThemeSetterContext.Provider value={{ setFontSize, setColorPalette }}>{children}</ThemeSetterContext.Provider>
       </ThemeProvider>
     );
   }, [theme, setTheme]);

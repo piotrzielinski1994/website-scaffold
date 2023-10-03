@@ -1,5 +1,5 @@
 import React from 'react';
-import Section from '../section/section';
+import Section from '@/components/shared/layout/section/section';
 import { FooterProps } from './footer.types';
 
 const Footer = ({ children }: FooterProps) => {

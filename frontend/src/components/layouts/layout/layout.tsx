@@ -1,13 +1,24 @@
-import React from 'react';
+'use client'
+
+import React, { lazy, useMemo } from 'react';
 import { LayoutProps } from './layout.types';
-import DefaultLayout from '../default-layout/default-layout';
+
+const DefaultLayout = lazy(() => import('../default-layout/default-layout'));
 
 const Layout = ({ layout, ...props }: LayoutProps) => {
-  switch (layout) {
-    case 'default': {
-      return <DefaultLayout {...props} />
+  const template = useMemo(() => {
+    switch (layout) {
+      case 'default': {
+        return <DefaultLayout {...props} />;
+      }
     }
-  }
-}
+  }, [layout]);
+
+  return (
+    <html lang="en">
+      <body>{template}</body>
+    </html>
+  );
+};
 
 export default Layout;

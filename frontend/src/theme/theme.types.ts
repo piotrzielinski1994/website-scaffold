@@ -5,6 +5,13 @@ export interface Theme {
     primary: TakeColorWithOpacity;
     secondary: TakeColorWithOpacity;
   };
+  font: {
+    family: {
+      default: string;
+      primary: string;
+    };
+    size: Size;
+  };
   sizing: {
     maxWidth: {
       lg: Size;
@@ -14,6 +21,11 @@ export interface Theme {
     }
   };
   component: {};
+}
+
+export interface ThemeSetter {
+  setColorPalette: (palette: Theme['color']) => void;
+  setFontSize: (fontSize: Theme['font']['size']) => void;
 }
 
 export type Color = `hsl(${number}, ${number}%, ${number}%, ${number})`;
