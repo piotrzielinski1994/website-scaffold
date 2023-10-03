@@ -27,7 +27,7 @@ const StylesProvider = ({ children }: PropsWithChildren) => {
     return styles;
   });
 
-  if (window !== undefined) return content;
+  if (typeof window !== 'undefined') return content;
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>{content}</StyleSheetManager>
