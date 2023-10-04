@@ -1,8 +1,9 @@
 import React from 'react';
 import { PageTemplateProps } from './page.types';
+import Block from '@/components/blocks/block';
 
 const PageTemplate = ({ page }: PageTemplateProps) => {
-  return <div>Page: {page.title}</div>
+  return page.content.map((block) => <Block {...block} />)
 }
 
 export default PageTemplate;

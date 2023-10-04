@@ -4,17 +4,17 @@
   "vendor": "postgres",
   "collections": [
     {
-      "collection": "component_hero_primary",
+      "collection": "block_hero_primary",
       "meta": {
         "accountability": "all",
         "archive_app_filter": true,
         "archive_field": null,
         "archive_value": null,
         "collapse": "open",
-        "collection": "component_hero_primary",
+        "collection": "block_hero_primary",
         "color": null,
         "display_template": null,
-        "group": "components",
+        "group": "blocks",
         "hidden": false,
         "icon": null,
         "item_duplication_fields": null,
@@ -27,18 +27,18 @@
         "unarchive_value": null
       },
       "schema": {
-        "name": "component_hero_primary"
+        "name": "block_hero_primary"
       }
     },
     {
-      "collection": "components",
+      "collection": "blocks",
       "meta": {
         "accountability": "all",
         "archive_app_filter": true,
         "archive_field": null,
         "archive_value": null,
         "collapse": "open",
-        "collection": "components",
+        "collection": "blocks",
         "color": null,
         "display_template": null,
         "group": null,
@@ -48,7 +48,7 @@
         "note": null,
         "preview_url": null,
         "singleton": false,
-        "sort": 1,
+        "sort": 3,
         "sort_field": null,
         "translations": null,
         "unarchive_value": null
@@ -72,7 +72,7 @@
         "note": null,
         "preview_url": null,
         "singleton": false,
-        "sort": 2,
+        "sort": 1,
         "sort_field": "sort",
         "translations": null,
         "unarchive_value": "draft"
@@ -99,7 +99,7 @@
         "note": null,
         "preview_url": null,
         "singleton": false,
-        "sort": 3,
+        "sort": 2,
         "sort_field": null,
         "translations": null,
         "unarchive_value": null
@@ -111,11 +111,11 @@
   ],
   "fields": [
     {
-      "collection": "component_hero_primary",
+      "collection": "block_hero_primary",
       "field": "created_at",
       "type": "timestamp",
       "meta": {
-        "collection": "component_hero_primary",
+        "collection": "block_hero_primary",
         "conditions": null,
         "display": "datetime",
         "display_options": {
@@ -140,7 +140,7 @@
       },
       "schema": {
         "name": "created_at",
-        "table": "component_hero_primary",
+        "table": "block_hero_primary",
         "data_type": "timestamp with time zone",
         "default_value": null,
         "max_length": null,
@@ -157,11 +157,11 @@
       }
     },
     {
-      "collection": "component_hero_primary",
+      "collection": "block_hero_primary",
       "field": "heading",
       "type": "string",
       "meta": {
-        "collection": "component_hero_primary",
+        "collection": "block_hero_primary",
         "conditions": null,
         "display": null,
         "display_options": null,
@@ -182,7 +182,7 @@
       },
       "schema": {
         "name": "heading",
-        "table": "component_hero_primary",
+        "table": "block_hero_primary",
         "data_type": "character varying",
         "default_value": null,
         "max_length": 255,
@@ -199,11 +199,11 @@
       }
     },
     {
-      "collection": "component_hero_primary",
+      "collection": "block_hero_primary",
       "field": "id",
       "type": "uuid",
       "meta": {
-        "collection": "component_hero_primary",
+        "collection": "block_hero_primary",
         "conditions": null,
         "display": null,
         "display_options": null,
@@ -226,7 +226,7 @@
       },
       "schema": {
         "name": "id",
-        "table": "component_hero_primary",
+        "table": "block_hero_primary",
         "data_type": "uuid",
         "default_value": null,
         "max_length": null,
@@ -243,53 +243,11 @@
       }
     },
     {
-      "collection": "component_hero_primary",
-      "field": "subheading",
-      "type": "string",
-      "meta": {
-        "collection": "component_hero_primary",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "subheading",
-        "group": null,
-        "hidden": false,
-        "interface": "input",
-        "note": null,
-        "options": null,
-        "readonly": false,
-        "required": false,
-        "sort": 5,
-        "special": null,
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      },
-      "schema": {
-        "name": "subheading",
-        "table": "component_hero_primary",
-        "data_type": "character varying",
-        "default_value": null,
-        "max_length": 255,
-        "numeric_precision": null,
-        "numeric_scale": null,
-        "is_nullable": true,
-        "is_unique": false,
-        "is_primary_key": false,
-        "is_generated": false,
-        "generation_expression": null,
-        "has_auto_increment": false,
-        "foreign_key_table": null,
-        "foreign_key_column": null
-      }
-    },
-    {
-      "collection": "component_hero_primary",
+      "collection": "block_hero_primary",
       "field": "updated_at",
       "type": "timestamp",
       "meta": {
-        "collection": "component_hero_primary",
+        "collection": "block_hero_primary",
         "conditions": null,
         "display": "datetime",
         "display_options": {
@@ -314,7 +272,7 @@
       },
       "schema": {
         "name": "updated_at",
-        "table": "component_hero_primary",
+        "table": "block_hero_primary",
         "data_type": "timestamp with time zone",
         "default_value": null,
         "max_length": null,
@@ -1307,7 +1265,7 @@
         "many_collection": "pages_content",
         "many_field": "item",
         "one_allowed_collections": [
-          "component_hero_primary"
+          "block_hero_primary"
         ],
         "one_collection": null,
         "one_collection_field": "collection",
