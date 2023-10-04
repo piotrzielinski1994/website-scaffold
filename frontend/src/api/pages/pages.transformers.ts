@@ -25,8 +25,8 @@ export const apiPageToPage = (pages: ApiPage[], pageId: ApiPage['id']): Page => 
 };
 
 export const apiPagesToPagesCollection = (apiPages: ApiPage[]): Pages => {
-  const collection: Pages = apiPages.reduce((map, apiPage) => {
-    return { ...map, [apiPage.id]: apiPageToPage(apiPages, apiPage.id) };
-  }, {});
-  return collection;
+  return apiPages.reduce((map, apiPage) => ({
+    ...map,
+    [apiPage.id]: apiPageToPage(apiPages, apiPage.id)
+  }), {});
 };

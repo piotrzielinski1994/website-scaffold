@@ -1,16 +1,17 @@
 import React from 'react';
 import { NavbarProps } from './navbar.types';
 import NavItem from './components/nav-item/nav-item';
-import Section from '../section/section';
 
 const Navbar = ({ items }: NavbarProps) => {
-  return <Section htmlTag='header'>
+  return (
     <nav>
       <ul>
-        {items.map((item) => <NavItem key={item.href} {...item}/>)}
+        {items.map((item) => (
+          <NavItem key={item.href} {...item} />
+        ))}
       </ul>
     </nav>
-  </Section>
-}
+  );
+};
 
 export default Navbar;

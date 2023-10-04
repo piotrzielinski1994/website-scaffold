@@ -1,12 +1,12 @@
 import { CommonLayoutProps } from '../layout/layout.types';
-import Navbar from '../../shared/layout/navbar/navbar';
 import Footer from '@/components/shared/layout/footer/footer';
 import S from './default-layout.styles';
+import Header from '@/components/shared/layout/header/header';
 
-const DefaultLayout = ({ children, navbar }: CommonLayoutProps) => {
+const DefaultLayout = ({ children, header }: CommonLayoutProps) => {
   return (
     <>
-      <Navbar {...navbar} />
+      <Header {...header} />
       <S.Main>{children}</S.Main>
       <Footer />
     </>
