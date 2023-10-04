@@ -6,11 +6,19 @@ export const apiPageToPage = (pages: ApiPage[], pageId: ApiPage['id']): Page => 
   if (!page) throw Error(`Page ${pageId} not found.`);
 
   return {
-    ...page,
+    id: page.id,
+    status: page.status,
     parentPage: page.parent_page,
+    subpages: page.subpages,
+    sort: page.sort,
     isVisibleInNavbar: page.is_visible_in_navbar,
     slug: page.slug ?? '',
     path: takePagePath(pages, pageId),
+    layout: page.layout,
+    title: page.title,
+    description: page.description,
+    image: page.image,
+    content: page.content,
     createdAt: new Date(page.created_at),
     updatedAt: page.updated_at ? new Date(page.updated_at) : null,
   }

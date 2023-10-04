@@ -32,7 +32,7 @@ const StylesProvider = ({ children }: PropsWithChildren) => {
         <ThemeSetterContext.Provider value={themeSetter}>{children}</ThemeSetterContext.Provider>
       </ThemeProvider>
     );
-  }, [theme, setTheme]);
+  }, [theme, themeSetter]);
 
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement();

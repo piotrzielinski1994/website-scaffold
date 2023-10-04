@@ -9,6 +9,9 @@ export interface ApiPage extends ApiWithTimestamps, ApiWithPublicationStatus {
   slug: string | null;
   layout: 'default';
   title: string;
+  description: string | null;
+  image: string | null;
+  content: [];
 }
 
 export interface Page extends WithTimestamps, WithPublicationStatus {
@@ -21,6 +24,9 @@ export interface Page extends WithTimestamps, WithPublicationStatus {
   path: string;
   layout: ApiPage['layout'];
   title: ApiPage['title'];
+  description: ApiPage['description'];
+  image: ApiPage['image'];
+  content: ApiPage['content'];
 }
 
 export type Pages = Record<Page['id'], Page>; 
