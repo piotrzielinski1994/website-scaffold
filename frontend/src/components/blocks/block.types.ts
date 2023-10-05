@@ -1,7 +1,9 @@
-export type BlockProps = Block<BlockType, unknown>;
+import { HeroPrimaryBlock } from "./hero/hero-primary/hero-primary.types";
+
+export type BlockProps = HeroPrimaryBlock;
 
 export interface Block<T extends BlockType, P> {
-  type: BlockType;
+  type: T;
   props: P;
 }
 

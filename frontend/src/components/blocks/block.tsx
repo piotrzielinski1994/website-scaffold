@@ -1,6 +1,9 @@
+'use client'
+
 import { lazy } from 'react';
 import { BlockProps, BlockType } from './block.types';
 import { HeroPrimaryProps } from './hero/hero-primary/hero-primary.types';
+
 const HeroPrimary = lazy(() => import('./hero/hero-primary/hero-primary'));
 
 const Block = ({ type, props }: BlockProps) => {

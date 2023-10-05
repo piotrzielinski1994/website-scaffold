@@ -16,12 +16,14 @@ const Page = async ({ params }: PageProps) => {
 
   if (page === undefined) return notFound();
 
-  return <>
-    <Metadata {...pageToMetadataProps(page)} />
-    <Layout layout={page.layout} header={pagesToHeaderProps(pages)} >
-      <PageTemplate page={page} />
-    </Layout>
-  </>;
+  return (
+    <>
+      <Metadata {...pageToMetadataProps(page)} />
+      <Layout layout={page.layout} header={pagesToHeaderProps(pages)}>
+        <PageTemplate page={page} />
+      </Layout>
+    </>
+  );
 };
 
 export default Page;

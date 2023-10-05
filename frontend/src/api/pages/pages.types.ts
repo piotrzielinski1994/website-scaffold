@@ -1,4 +1,4 @@
-import { Block, BlockType } from "@/components/blocks/block.types";
+import { BlockProps } from "@/components/blocks/block.types";
 import { ApiWithPublicationStatus, ApiWithTimestamps, WithPublicationStatus, WithTimestamps } from "../common.types";
 
 export interface ApiPage extends ApiWithTimestamps, ApiWithPublicationStatus {
@@ -30,7 +30,7 @@ export interface Page extends WithTimestamps, WithPublicationStatus {
   title: ApiPage['title'];
   description: ApiPage['description'];
   image: ApiPage['image'];
-  content: Block<BlockType, unknown>[];
+  content: BlockProps[];
 }
 
 export type Pages = Record<Page['id'], Page>; 
