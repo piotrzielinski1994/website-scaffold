@@ -1,5 +1,8 @@
-export interface PageProps {
+export interface PageProps extends RouteMetadata {}
+
+export interface RouteMetadata {
   params: {
-    slugs: string[];
-  }
+    slugs?: string[];
+  };
+  searchParams: Record<string, string | string[] | undefined>;
 }

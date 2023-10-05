@@ -5,24 +5,23 @@ import PageTemplate from '@/components/templates/page/page';
 import { notFound } from 'next/navigation';
 import Layout from '@/components/layouts/layout/layout';
 import { takePageByPath } from '@/api/pages/pages.helpers';
-import Metadata from '@/components/shared/metadata/metadata';
-import { pageToMetadataProps } from '@/components/shared/metadata/metadata.transformers';
 import { pagesToHeaderProps } from '@/components/shared/layout/header/header.transformers';
+import { slugsToPath } from './page.transformers';
+import { getPageMetadata } from './page.helpers';
+
+export const generateMetadata = getPageMetadata;
 
 const Page = async ({ params }: PageProps) => {
-  const path = `/${params.slugs?.join('/') ?? ''}`;
+  const path = slugsToPath(params.slugs ?? []);
   const pages = await getPages();
   const page = takePageByPath(pages, path);
 
   if (page === undefined) return notFound();
 
   return (
-    <>
-      <Metadata {...pageToMetadataProps(page)} />
-      <Layout layout={page.layout} header={pagesToHeaderProps(pages)}>
-        <PageTemplate page={page} />
-      </Layout>
-    </>
+    <Layout layout={page.layout} header={pagesToHeaderProps(pages)}>
+      <PageTemplate page={page} />
+    </Layout>
   );
 };
 
