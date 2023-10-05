@@ -7,12 +7,6 @@ import { takePageByPath } from '@/api/pages/pages.helpers';
 import { pagesToHeaderProps } from '@/components/shared/layout/header/header.transformers';
 import { slugsToPath } from './page.transformers';
 import { getPageMetadata } from './page.helpers';
-import Asd from '@packages/configs/.eslintrc';
-
-const qwe: any = 2;
-
-console.log('@@@ asd | ', qwe);
-console.log('@@@ Asd | ', Asd);
 
 export const generateMetadata = getPageMetadata;
 
