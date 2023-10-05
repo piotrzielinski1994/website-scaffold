@@ -1,4 +1,3 @@
-import type { Page } from '@/shared/types/page.types';
 import { PageProps } from './page.types';
 import { getPages } from '@/api/pages/pages.requests';
 import PageTemplate from '@/components/templates/page/page';
@@ -8,6 +7,12 @@ import { takePageByPath } from '@/api/pages/pages.helpers';
 import { pagesToHeaderProps } from '@/components/shared/layout/header/header.transformers';
 import { slugsToPath } from './page.transformers';
 import { getPageMetadata } from './page.helpers';
+import Asd from '@packages/configs/.eslintrc';
+
+const qwe: any = 2;
+
+console.log('@@@ asd | ', qwe);
+console.log('@@@ Asd | ', Asd);
 
 export const generateMetadata = getPageMetadata;
 

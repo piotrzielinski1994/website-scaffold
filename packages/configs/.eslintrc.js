@@ -12,6 +12,6 @@ module.exports = {
   settings: {},
   ignorePatterns: ['node_modules', '**/*.js', '**/*.d.ts'],
   rules: {
-    "import/no-anonymous-default-export": false
+    '@typescript-eslint/no-explicit-any': 'error',
   },
 };
