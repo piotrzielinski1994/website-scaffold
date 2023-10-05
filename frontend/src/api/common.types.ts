@@ -19,3 +19,7 @@ export interface WithPublicationStatus {
 }
 
 // ==========================================
+
+export interface Model {
+  id: string;
+}

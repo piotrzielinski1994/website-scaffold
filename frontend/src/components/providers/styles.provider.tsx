@@ -17,14 +17,16 @@ const StylesProvider = ({ children }: PropsWithChildren) => {
   // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
   const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet());
   const [theme, setTheme] = useState(defaultTheme);
-  const themeSetter = useMemo(() => ({
-    setColorPalette: (palette: Theme['color']) => {
-      setTheme((prevTheme) => ({ ...prevTheme, color: palette }));
-    },
-    setFontSize: (fontSize: Theme['font']['size']) => {
-      setTheme((prevTheme) => ({ ...prevTheme, font: { ...prevTheme.font, size: fontSize }}));
-    }
-  }), []);
+  const themeSetter = useMemo(() => {
+    return {
+      setColorPalette: (palette: Theme['color']) => {
+        setTheme((prevTheme) => ({ ...prevTheme, color: palette }));
+      },
+      setFontSize: (fontSize: Theme['font']['size']) => {
+        setTheme((prevTheme) => ({ ...prevTheme, font: { ...prevTheme.font, size: fontSize } }));
+      },
+    };
+  }, []);
   const content = useMemo(() => {
     return (
       <ThemeProvider theme={theme}>
@@ -32,7 +34,7 @@ const StylesProvider = ({ children }: PropsWithChildren) => {
         <ThemeSetterContext.Provider value={themeSetter}>{children}</ThemeSetterContext.Provider>
       </ThemeProvider>
     );
-  }, [theme, themeSetter]);
+  }, [theme, themeSetter, children]);
 
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement();

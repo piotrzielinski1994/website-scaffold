@@ -3,3 +3,9 @@ export interface RequestOptions<B = undefined> {
   headers?: RequestInit['headers'];
   body?: B;
 }
+
+export interface ApiConfig {
+  baseUrl: string;
+  token: string;
+  transform?: <T, P>(responseJson: T) => P;
+}

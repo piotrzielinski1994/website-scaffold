@@ -16,7 +16,7 @@ const Layout = ({ layout, ...props }: LayoutProps) => {
         throw new Error(`Unhandled switch case for layout: ${exhaustiveCheck}`);
       }
     }
-  }, [layout]);
+  }, [layout, props]);
 
   return (
     <html lang="en">

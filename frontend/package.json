@@ -6,7 +6,8 @@
     "start": "next dev",
     "build": "next build",
     "serve": "next serve",
-    "lint": "next lint",
+    "lint": "bash -c 'npx tsc --noEmit' && lint-staged",
+    "asd": "bash -c 'npx tsc --noEmit' && eslint --fix . && next lint",
     "enter_shell": "docker-compose exec -it -u root frontend bash"
   },
   "dependencies": {
@@ -23,5 +24,13 @@
     "react-dom": "18.2.0",
     "styled-components": "^6.0.8",
     "typescript": "5.2.2"
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx}": [
+      "bash -c 'npx tsc --noEmit'",
+      "eslint --fix .",
+      "next lint",
+      "prettier --config .prettierrc --write"
+    ]
   }
 }

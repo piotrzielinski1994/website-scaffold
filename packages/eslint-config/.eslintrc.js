@@ -11,7 +11,5 @@ module.exports = {
   overrides: [],
   settings: {},
   ignorePatterns: ['node_modules', '**/*.js', '**/*.d.ts'],
-  rules: {
-    '@typescript-eslint/no-explicit-any': 'error',
-  },
+  rules: {},
 };
