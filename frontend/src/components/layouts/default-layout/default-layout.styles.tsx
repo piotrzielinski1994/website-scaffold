@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Main = styled.main`
   border: 2px solid orange;
@@ -6,4 +6,4 @@ const Main = styled.main`
 
 export default {
   Main,
-}
+};

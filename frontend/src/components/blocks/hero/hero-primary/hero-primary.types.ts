@@ -1,7 +1,7 @@
-import { Block, BlockType } from "../../block.types";
+import { Block, BlockType } from '../../block.types';
 
 export interface HeroPrimaryProps {
   heading?: string;
 }
 
-export type HeroPrimaryBlock = Block<BlockType.HERO_PRIMARY, HeroPrimaryProps>
+export type HeroPrimaryBlock = Block<BlockType.HERO_PRIMARY, HeroPrimaryProps>;

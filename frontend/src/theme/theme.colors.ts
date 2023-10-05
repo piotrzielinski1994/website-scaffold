@@ -1,5 +1,5 @@
-import { hsl } from "./theme.helpers";
-import { Palette, Theme } from "./theme.types";
+import { hsl } from './theme.helpers';
+import { Palette, Theme } from './theme.types';
 
 export const lightTheme: Theme['color'] = {
   textDefault: hsl(Palette.BLACK),

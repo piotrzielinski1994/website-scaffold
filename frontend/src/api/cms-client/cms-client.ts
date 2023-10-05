@@ -5,7 +5,7 @@ class Api {
 
   private request = async <R, B = unknown>(
     path: string,
-    options?: RequestOptions<B>
+    options?: RequestOptions<B>,
   ): Promise<R> => {
     const url = `${this.config.baseUrl}/${path}`.replace(/\/\//g, '/');
     const response = await fetch(url, {
@@ -23,11 +23,17 @@ class Api {
   };
 
   get = <R, B = undefined>(path: string, options?: Omit<RequestOptions<B>, 'method'>) => {
-    return this.request<R, B>(path, { method: 'GET', ...options });
+    return this.request<R, B>(path, {
+      method: 'GET',
+      ...options,
+    });
   };
 
   post = <R, B = undefined>(path: string, options?: Omit<RequestOptions<B>, 'method'>) => {
-    return this.request<R, B>(path, { method: 'POST', ...options });
+    return this.request<R, B>(path, {
+      method: 'POST',
+      ...options,
+    });
   };
 }
 

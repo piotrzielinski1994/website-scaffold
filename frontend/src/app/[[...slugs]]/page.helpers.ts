@@ -1,6 +1,6 @@
-import { Metadata } from "next";
-import { RouteMetadata } from "./page.types";
-import { slugsToPath } from "./page.transformers";
+import { Metadata } from 'next';
+import { RouteMetadata } from './page.types';
+import { slugsToPath } from './page.transformers';
 import { getPages } from '@/api/pages/pages.requests';
 import { takePageByPath } from '@/api/pages/pages.helpers';
 
@@ -18,4 +18,4 @@ export const getPageMetadata = async ({ params }: RouteMetadata): Promise<Metada
       images: page.image ? [page.image] : undefined,
     },
   };
-}
+};

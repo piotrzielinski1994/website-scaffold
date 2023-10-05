@@ -20,10 +20,19 @@ const StylesProvider = ({ children }: PropsWithChildren) => {
   const themeSetter = useMemo(() => {
     return {
       setColorPalette: (palette: Theme['color']) => {
-        setTheme((prevTheme) => ({ ...prevTheme, color: palette }));
+        setTheme((prevTheme) => ({
+          ...prevTheme,
+          color: palette,
+        }));
       },
       setFontSize: (fontSize: Theme['font']['size']) => {
-        setTheme((prevTheme) => ({ ...prevTheme, font: { ...prevTheme.font, size: fontSize } }));
+        setTheme((prevTheme) => ({
+          ...prevTheme,
+          font: {
+            ...prevTheme.font,
+            size: fontSize,
+          },
+        }));
       },
     };
   }, []);

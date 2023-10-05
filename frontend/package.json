@@ -7,7 +7,6 @@
     "build": "next build",
     "serve": "next serve",
     "lint": "bash -c 'npx tsc --noEmit' && lint-staged",
-    "asd": "bash -c 'npx tsc --noEmit' && eslint --fix . && next lint",
     "enter_shell": "docker-compose exec -it -u root frontend bash"
   },
   "dependencies": {

@@ -37,6 +37,6 @@ export const apiPagesToPagesCollection = (apiPages: ApiPage[]): Pages => {
       ...map,
       [apiPage.id]: apiPageToPage(apiPages, apiPage.id),
     }),
-    {}
+    {},
   );
 };

@@ -16,6 +16,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lint-staged": "^14.0.1"
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }

@@ -1,6 +1,6 @@
-import { lightTheme } from "./theme.colors";
-import { defaultFontSize } from "./theme.sizes";
-import { Theme } from "./theme.types";
+import { lightTheme } from './theme.colors';
+import { defaultFontSize } from './theme.sizes';
+import { Theme } from './theme.types';
 
 const defaultTheme: Theme = {
   color: lightTheme,

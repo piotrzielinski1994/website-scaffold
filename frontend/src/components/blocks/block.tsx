@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { lazy } from 'react';
 import { BlockProps, BlockType } from './block.types';

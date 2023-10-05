@@ -1,4 +1,4 @@
-import { ApiPage, Page, Pages } from "./pages.types";
+import { ApiPage, Page, Pages } from './pages.types';
 
 export const takePagePath = (pages: ApiPage[], pageId: ApiPage['id']): Page['path'] => {
   const page = pages.find((page) => page.id === pageId);
@@ -9,12 +9,15 @@ export const takePagePath = (pages: ApiPage[], pageId: ApiPage['id']): Page['pat
 
   const parentPagePath = takePagePath(pages, page.parent_page);
   return `${parentPagePath}/${slug}`.replace(/\/\//g, '/');
-}
+};
 
 export const takePageByPath = (pages: Pages, path: Page['path']): Page | undefined => {
   return Object.values(pages).find((page) => page.path === path);
-}
+};
 
-export const takePageByParentId = (pages: Pages, parentId: Page['parentPage']): Page | undefined => {
+export const takePageByParentId = (
+  pages: Pages,
+  parentId: Page['parentPage'],
+): Page | undefined => {
   return Object.values(pages).find((page) => page.parentPage === parentId);
-}
+};

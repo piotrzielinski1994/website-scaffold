@@ -18,7 +18,7 @@ export interface Theme {
     };
     spacing: {
       md: Size;
-    }
+    };
   };
   component: {};
 }
@@ -36,7 +36,7 @@ export const Palette = {
   BLUE: [240, 100, 50],
   RED: [0, 100, 50],
   WHITE: [255, 100, 100],
-} satisfies Record<string, Hsl>
+} satisfies Record<string, Hsl>;
 
 type Sizing = 'xs2' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xl2';
 type Breakpoint = '480px' | '768px' | '992px' | '1350px';

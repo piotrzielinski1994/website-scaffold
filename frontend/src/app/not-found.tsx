@@ -9,7 +9,7 @@ const NotFoundPage = async () => {
   const pages = await getPages();
   const page = takePageByPath(pages, '/');
   const layout: LayoutProps['layout'] = page?.layout ?? 'default';
-  
+
   return (
     <Layout layout={layout} header={pagesToHeaderProps(pages)}>
       not found
