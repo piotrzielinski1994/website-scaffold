@@ -23,7 +23,6 @@
       "@/*": ["./src/*"],
       "@/layouts/*": ["./src/components/layouts/*"],
       "@/templates/*": ["./src/components/templates/*"],
-      "@/shared/*": ["../packages/*"],
       "@/api/*": ["./src/api/*"]
     }
   },
