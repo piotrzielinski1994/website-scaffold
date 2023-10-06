@@ -1,7 +1,7 @@
 import { ApiConfig, RequestOptions } from './api.types';
 
-class Api {
-  constructor(private config: ApiConfig) {}
+class Api<J> {
+  constructor(private config: ApiConfig<J>) {}
 
   private request = async <R, B = unknown>(
     path: string,

@@ -4,8 +4,8 @@ export interface RequestOptions<B = undefined> {
   body?: B;
 }
 
-export interface ApiConfig {
+export interface ApiConfig<J> {
   baseUrl: string;
   token: string;
-  transform?: <T, P>(responseJson: T) => P;
+  transform?: (responseJson: J) => unknown;
 }
