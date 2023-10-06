@@ -1,8 +1,8 @@
+import { takePageByPath } from '@/cms/pages/pages.helpers';
+import { getPages } from '@/cms/pages/pages.requests';
 import { Metadata } from 'next';
-import { RouteMetadata } from './page.types';
 import { slugsToPath } from './page.transformers';
-import { getPages } from '@/api/pages/pages.requests';
-import { takePageByPath } from '@/api/pages/pages.helpers';
+import { RouteMetadata } from './page.types';
 
 export const getPageMetadata = async ({ params }: RouteMetadata): Promise<Metadata> => {
   const path = slugsToPath(params.slugs ?? []);

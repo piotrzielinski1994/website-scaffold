@@ -1,8 +1,8 @@
 {
-  "name": "@packages/types",
+  "name": "@packages/api",
   "version": "0.1.0",
   "description": "",
-  "main": "common.types.ts",
+  "main": "api.ts",
   "scripts": {},
   "devDependencies": {
     "@packages/configs": "*",

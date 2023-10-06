@@ -1,4 +1,4 @@
-import { ApiConfig, RequestOptions } from './cms-client.types';
+import { ApiConfig, RequestOptions } from './api.types';
 
 class Api {
   constructor(private config: ApiConfig) {}
@@ -37,10 +37,4 @@ class Api {
   };
 }
 
-const cmsClient = new Api({
-  baseUrl: process.env.API_URL as string,
-  token: process.env.API_TOKEN as string,
-  transform: (response: any) => response.data,
-});
-
-export default cmsClient;
+export default Api;

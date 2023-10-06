@@ -24,7 +24,7 @@
       "@/*": ["./src/*"],
       "@/layouts/*": ["./src/components/layouts/*"],
       "@/templates/*": ["./src/components/templates/*"],
-      "@/api/*": ["./src/api/*"]
+      "@/api/*": ["src/cms/*"]
     }
   },
   "include": [

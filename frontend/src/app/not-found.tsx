@@ -1,9 +1,8 @@
-import { takePageByPath } from '@/api/pages/pages.helpers';
-import { getPages } from '@/api/pages/pages.requests';
+import { takePageByPath } from '@/cms/pages/pages.helpers';
+import { getPages } from '@/cms/pages/pages.requests';
 import Layout from '@/components/layouts/layout/layout';
 import { LayoutProps } from '@/components/layouts/layout/layout.types';
 import { pagesToHeaderProps } from '@/components/shared/layout/header/header.transformers';
-import React from 'react';
 
 const NotFoundPage = async () => {
   const pages = await getPages();

@@ -1,4 +1,4 @@
-import { takePageByParentId } from '@/api/pages/pages.helpers';
+import { takePageByParentId } from '@/cms/pages/pages.helpers';
 import { Page, Pages } from '@packages/types/pages/pages.types';
 import { MenuItem } from './navbar.types';
 
