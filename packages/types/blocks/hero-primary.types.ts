@@ -2,7 +2,7 @@ import { ApiImage, Image } from '@packages/types/common.types';
 import { ApiBlockDeclaration, BlockDeclaration, BlockType } from './blocks.types';
 
 export type ApiBlockHeroPrimary = ApiBlockDeclaration<
-  BlockType.HERO_PRIMARY,
+  'block_hero_primary',
   {
     heading: string | null;
     image: ApiImage | null;
@@ -10,7 +10,7 @@ export type ApiBlockHeroPrimary = ApiBlockDeclaration<
 >;
 
 export type BlockHeroPrimary = BlockDeclaration<
-  BlockType.HERO_PRIMARY,
+  'block_hero_primary',
   {
     heading: ApiBlockHeroPrimary['item']['heading'];
     image: Image | null;

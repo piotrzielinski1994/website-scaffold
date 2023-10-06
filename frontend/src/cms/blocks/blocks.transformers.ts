@@ -1,9 +1,10 @@
-import { ApiBlock, Block, BlockType } from '@packages/types/blocks/blocks.types';
+import { ApiBlock, Block } from '@packages/types/blocks/blocks.types';
 import { ApiImage, Image } from '@packages/types/common.types';
 
 export const apiBlockToBlock = (apiBlock: ApiBlock): Block => {
-  switch (apiBlock.collection) {
-    case BlockType.HERO_PRIMARY: {
+  const type = apiBlock.collection;
+  switch (type) {
+    case 'block_hero_primary': {
       return {
         type: apiBlock.collection,
         id: apiBlock.item.id,
@@ -12,6 +13,10 @@ export const apiBlockToBlock = (apiBlock: ApiBlock): Block => {
           image: apiBlock.item.image && apiImageToImage(apiBlock.item.image),
         },
       };
+    }
+    default: {
+      const exhaustiveCheck: never = type;
+      throw new Error(`Unhandled switch case for collection: ${exhaustiveCheck}`);
     }
   }
 };

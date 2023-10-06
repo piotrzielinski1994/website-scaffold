@@ -20,7 +20,5 @@ export interface BlockDeclaration<T extends BlockType, P> {
 
 // ==========================================
 
-const blockPrefix = 'block';
-export enum BlockType {
-  HERO_PRIMARY = `${blockPrefix}_hero_primary`,
-}
+type blockPrefix = 'block';
+export type BlockType = `${blockPrefix}_hero_primary`;
