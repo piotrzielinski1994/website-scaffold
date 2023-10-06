@@ -1,4 +1,3 @@
-import { ApiBlock, Block } from '../blocks/blocks.types';
 import {
   ApiModel,
   ApiWithPublicationStatus,
@@ -6,7 +5,8 @@ import {
   Model,
   WithPublicationStatus,
   WithTimestamps,
-} from '../common.types';
+} from '@packages/types/common.types';
+import { ApiBlock, Block } from '../blocks/blocks.types';
 
 export interface ApiPage extends ApiModel, ApiWithTimestamps, ApiWithPublicationStatus {
   parent_page: ApiPage['id'] | null;

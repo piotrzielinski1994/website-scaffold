@@ -1,4 +1,4 @@
-import { Page } from '@/api/pages/pages.types';
+import { Page } from '@packages/types/pages/pages.types';
 
 export interface PageTemplateProps {
   page: Page;

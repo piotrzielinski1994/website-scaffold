@@ -1,4 +1,4 @@
-import { Model } from '../common.types';
+import { Model } from '@packages/types/common.types';
 import { ApiBlockHeroPrimary, BlockHeroPrimary } from './hero-primary.types';
 
 export type ApiBlock = ApiBlockHeroPrimary;

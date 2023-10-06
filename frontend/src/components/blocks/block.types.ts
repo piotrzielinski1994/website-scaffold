@@ -1,3 +1,3 @@
-import { Block } from '@/api/blocks/blocks.types';
+import { Block } from '@packages/types/blocks/blocks.types';
 
 export type BlockProps = Block;

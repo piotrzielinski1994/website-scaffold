@@ -1,4 +1,4 @@
-import { ApiPage, Page, Pages } from './pages.types';
+import { ApiPage, Page, Pages } from '@packages/types/pages/pages.types';
 
 export const takePagePath = (pages: ApiPage[], pageId: ApiPage['id']): Page['path'] => {
   const page = pages.find((page) => page.id === pageId);

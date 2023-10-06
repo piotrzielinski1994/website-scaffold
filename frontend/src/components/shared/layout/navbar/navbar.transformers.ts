@@ -1,6 +1,6 @@
-import { Page, Pages } from '@/api/pages/pages.types';
-import { MenuItem } from './navbar.types';
 import { takePageByParentId } from '@/api/pages/pages.helpers';
+import { Page, Pages } from '@packages/types/pages/pages.types';
+import { MenuItem } from './navbar.types';
 
 export const pagesToMenuItems = (pages: Pages): MenuItem[] => {
   const rootPage = takePageByParentId(pages, null);

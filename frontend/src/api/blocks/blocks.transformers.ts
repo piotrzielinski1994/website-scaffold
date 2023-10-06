@@ -1,5 +1,5 @@
-import { ApiBlock, Block, BlockType } from '@/api/blocks/blocks.types';
-import { ApiImage, Image } from '../common.types';
+import { ApiBlock, Block, BlockType } from '@packages/types/blocks/blocks.types';
+import { ApiImage, Image } from '@packages/types/common.types';
 
 export const apiBlockToBlock = (apiBlock: ApiBlock): Block => {
   switch (apiBlock.collection) {

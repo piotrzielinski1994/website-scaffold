@@ -1,6 +1,6 @@
+import { ApiPage, Pages } from '@packages/types/pages/pages.types';
 import cmsClient from '../cms-client/cms-client';
 import { apiPagesToPagesCollection } from './pages.transformers';
-import { ApiPage, Pages } from './pages.types';
 
 export const getPages = async (): Promise<Pages> => {
   const apiPages = await cmsClient.get<ApiPage[]>(

@@ -1,6 +1,6 @@
+import { ApiPage, Page, Pages } from '@packages/types/pages/pages.types';
 import { apiBlockToBlock } from '../blocks/blocks.transformers';
 import { takePagePath } from './pages.helpers';
-import { ApiPage, Page, Pages } from './pages.types';
 
 export const apiPageToPage = (pages: ApiPage[], pageId: ApiPage['id']): Page => {
   const page = pages.find((page) => page.id === pageId);

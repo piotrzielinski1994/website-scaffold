@@ -1,4 +1,4 @@
-import { ApiImage, Image } from '../common.types';
+import { ApiImage, Image } from '@packages/types/common.types';
 import { ApiBlockDeclaration, BlockDeclaration, BlockType } from './blocks.types';
 
 export type ApiBlockHeroPrimary = ApiBlockDeclaration<
