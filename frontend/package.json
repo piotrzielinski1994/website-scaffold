@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@packages/eslint-config": "*",
+    "@packages/types": "*",
     "eslint-config-next": "13.4.19",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7"
