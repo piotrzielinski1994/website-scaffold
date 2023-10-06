@@ -15,7 +15,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "20.6.1",
+    "eslint": "^8.50.0",
+    "typescript": "^5.2.2",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3"
   },

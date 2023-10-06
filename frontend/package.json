@@ -12,18 +12,16 @@
   },
   "dependencies": {
     "@packages/configs": "*",
-    "@packages/eslint-config": "*",
-    "@apollo/client": "^3.8.3",
-    "@types/node": "20.6.1",
-    "@types/react": "18.2.21",
-    "@types/react-dom": "18.2.7",
-    "eslint": "8.49.0",
-    "eslint-config-next": "13.4.19",
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "styled-components": "^6.0.8",
-    "typescript": "5.2.2"
+    "styled-components": "^6.0.8"
+  },
+  "devDependencies": {
+    "@packages/eslint-config": "*",
+    "eslint-config-next": "13.4.19",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7"
   },
   "lint-staged": {
     "./**/*.{js,jsx,ts,tsx}": [
