@@ -11,5 +11,7 @@ module.exports = {
   overrides: [],
   settings: {},
   ignorePatterns: ['node_modules', '**/*.js', '**/*.d.ts'],
-  rules: {},
+  rules: {
+    'import/no-anonymous-default-export': 'off',
+  },
 };
