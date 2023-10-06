@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { ContainerClassname } from './container.types';
+import { ContainerClassName } from './container.types';
 
 const Wrapper = styled.div.attrs({
-  className: ContainerClassname.WRAPPER,
+  className: ContainerClassName.WRAPPER,
 })`
   margin-inline: auto;
   max-width: ${({ theme }) => theme.sizing.maxWidth.lg};

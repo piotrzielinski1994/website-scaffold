@@ -20,6 +20,28 @@ export interface WithPublicationStatus {
 
 // ==========================================
 
-export interface Model {
+export interface ApiModel {
   id: string;
 }
+
+export interface Model {
+  id: ApiModel['id'];
+}
+
+// ==========================================
+
+export interface ApiImage {
+  id: string;
+  description: string | null;
+  width: number;
+  height: number;
+}
+
+export interface Image {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+// ==========================================

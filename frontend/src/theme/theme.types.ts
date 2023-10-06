@@ -39,6 +39,6 @@ export const Palette = {
 } satisfies Record<string, Hsl>;
 
 type Sizing = 'xs2' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xl2';
-type Breakpoint = '480px' | '768px' | '992px' | '1350px';
+export type Breakpoint = '480px' | '768px' | '992px' | '1350px';
 type Size = `${number}${'px' | 'rem'}`;
 type TakeColorWithOpacity = (opacity?: number) => Color;

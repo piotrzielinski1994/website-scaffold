@@ -1,12 +1,12 @@
-import { PageProps } from './page.types';
+import { takePageByPath } from '@/api/pages/pages.helpers';
 import { getPages } from '@/api/pages/pages.requests';
+import Layout from '@/components/layouts/layout/layout';
+import { pagesToHeaderProps } from '@/components/shared/layout/header/header.transformers';
 import PageTemplate from '@/components/templates/page/page';
 import { notFound } from 'next/navigation';
-import Layout from '@/components/layouts/layout/layout';
-import { takePageByPath } from '@/api/pages/pages.helpers';
-import { pagesToHeaderProps } from '@/components/shared/layout/header/header.transformers';
-import { slugsToPath } from './page.transformers';
 import { getPageMetadata } from './page.helpers';
+import { slugsToPath } from './page.transformers';
+import { PageProps } from './page.types';
 
 export const generateMetadata = getPageMetadata;
 

@@ -1,5 +1,6 @@
-import { BlockProps } from '@/components/blocks/block.types';
+import { ApiBlock, Block } from '../blocks/blocks.types';
 import {
+  ApiModel,
   ApiWithPublicationStatus,
   ApiWithTimestamps,
   Model,
@@ -7,7 +8,7 @@ import {
   WithTimestamps,
 } from '../common.types';
 
-export interface ApiPage extends Model, ApiWithTimestamps, ApiWithPublicationStatus {
+export interface ApiPage extends ApiModel, ApiWithTimestamps, ApiWithPublicationStatus {
   parent_page: ApiPage['id'] | null;
   subpages: ApiPage['id'][];
   sort: number | null;
@@ -17,10 +18,7 @@ export interface ApiPage extends Model, ApiWithTimestamps, ApiWithPublicationSta
   title: string;
   description: string | null;
   image: string | null;
-  content: {
-    collection: string;
-    item: Model & unknown;
-  }[];
+  content: ApiBlock[];
 }
 
 export interface Page extends Model, WithTimestamps, WithPublicationStatus {
@@ -34,7 +32,7 @@ export interface Page extends Model, WithTimestamps, WithPublicationStatus {
   title: ApiPage['title'];
   description: ApiPage['description'];
   image: ApiPage['image'];
-  content: BlockProps[];
+  content: Block[];
 }
 
 export type Pages = Record<Page['id'], Page>;

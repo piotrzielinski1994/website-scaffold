@@ -1,4 +1,4 @@
-import { BlockProps } from '@/components/blocks/block.types';
+import { apiBlockToBlock } from '../blocks/blocks.transformers';
 import { takePagePath } from './pages.helpers';
 import { ApiPage, Page, Pages } from './pages.types';
 
@@ -19,13 +19,7 @@ export const apiPageToPage = (pages: ApiPage[], pageId: ApiPage['id']): Page => 
     title: page.title,
     description: page.description,
     image: page.image,
-    content: page.content.map((it) => {
-      return {
-        type: it.collection,
-        id: it.item.id,
-        props: it.item,
-      } as BlockProps;
-    }),
+    content: page.content.map(apiBlockToBlock),
     createdAt: new Date(page.created_at),
     updatedAt: page.updated_at ? new Date(page.updated_at) : null,
   };

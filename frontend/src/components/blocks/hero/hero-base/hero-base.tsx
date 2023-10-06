@@ -1,11 +1,10 @@
-import React from 'react';
-import { HeroBaseProps } from './hero-base.types';
 import S from './hero-base.styles';
+import { HeroBaseProps } from './hero-base.types';
 
-const HeroBase = (props: HeroBaseProps) => {
+const HeroBase = ({ children }: HeroBaseProps) => {
   return (
     <S.Wrapper>
-      <S.InnerWrapper>HERO BASE</S.InnerWrapper>
+      <S.InnerWrapper>{children ?? 'HERO BASE'}</S.InnerWrapper>
     </S.Wrapper>
   );
 };

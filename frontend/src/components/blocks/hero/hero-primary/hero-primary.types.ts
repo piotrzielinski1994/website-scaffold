@@ -1,7 +1,3 @@
-import { Block, BlockType } from '../../block.types';
+import { BlockHeroPrimary } from '@/api/blocks/hero-primary.types';
 
-export interface HeroPrimaryProps {
-  heading?: string;
-}
-
-export type HeroPrimaryBlock = Block<BlockType.HERO_PRIMARY, HeroPrimaryProps>;
+export type HeroPrimaryProps = BlockHeroPrimary['props'];

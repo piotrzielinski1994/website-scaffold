@@ -17,6 +17,11 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     display: grid;
   }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
 `;
 
 export default GlobalStyles;
