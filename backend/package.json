@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "directus start",
-    "setup": "directus bootstrap && npm run schema:apply",
+    "setup": "directus bootstrap",
     "schema:apply": "directus schema apply ./schema.json -y",
     "schema:generate": "npx directus schema snapshot --format=\"json\" ./schema.json",
     "enter_shell": "docker-compose exec -it backend bash"

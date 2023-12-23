@@ -21,7 +21,8 @@ services:
   backend:
     image: node:20
     working_dir: /app
-    command: npm start -w backend
+    # tty: true
+    command: bash -c "npm run setup -w backend && npm start -w backend"
     restart: unless-stopped
     volumes:
       - ./:/app
