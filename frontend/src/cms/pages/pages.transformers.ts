@@ -9,10 +9,10 @@ export const apiPageToPage = (pages: ApiPage[], pageId: ApiPage['id']): Page => 
   return {
     id: page.id,
     status: page.status,
-    parentPage: page.parent_page,
+    parentPage: page.parent_page_id,
     subpages: page.subpages,
     sort: page.sort,
-    isVisibleInNavbar: page.is_visible_in_navbar,
+    isVisibleInNavbar: page.menu,
     slug: page.slug ?? '',
     path: takePagePath(pages, pageId),
     layout: page.layout,

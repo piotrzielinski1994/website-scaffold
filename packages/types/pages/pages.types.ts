@@ -7,31 +7,28 @@ import {
   WithTimestamps,
 } from '@packages/types/common.types';
 import { ApiBlock, Block } from '../blocks/blocks.types';
+import { ApiSeo } from '@/cms/content/seo/seo.types';
 
 export interface ApiPage extends ApiModel, ApiWithTimestamps, ApiWithPublicationStatus {
-  parent_page: ApiPage['id'] | null;
+  parent_page_id: ApiPage['id'] | null;
   subpages: ApiPage['id'][];
   sort: number | null;
-  is_visible_in_navbar: boolean;
+  menu: ('main-navbar' | 'footer')[];
   slug: string | null;
   layout: 'default';
-  title: string;
-  description: string | null;
-  image: string | null;
+  seo_id: ApiSeo;
   content: ApiBlock[];
 }
 
 export interface Page extends Model, WithTimestamps, WithPublicationStatus {
-  parentPage: ApiPage['parent_page'];
+  parentPage: ApiPage['parent_page_id'];
   subpages: ApiPage['subpages'];
   sort: ApiPage['sort'];
-  isVisibleInNavbar: ApiPage['is_visible_in_navbar'];
+  isVisibleInNavbar: ApiPage['menu'];
   slug: string;
   path: string;
   layout: ApiPage['layout'];
-  title: ApiPage['title'];
-  description: ApiPage['description'];
-  image: ApiPage['image'];
+  seo: ApiPage['seo_id'];
   content: Block[];
 }
 
