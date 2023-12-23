@@ -24,8 +24,11 @@ export const takePagePaths = (pages: ApiPage[], pageId: ApiPage['id']): Page['pa
   return Object.fromEntries(entries);
 };
 
-export const takePageByPath = (pages: Pages, path: Page['path']): Page | undefined => {
-  return Object.values(pages).find((page) => page.path === path);
+export const takePageByPath = (pages: Pages, path: string): Page | undefined => {
+  return Object.values(pages).find((page) => {
+    const paths = objectEntries(page.path);
+    return paths.find((it) => it.at(1) === path);
+  });
 };
 
 export const takePageByParentId = (
@@ -64,4 +67,8 @@ export const takePageContent = (page: ApiPage): Page['content'] => {
       return [it.languages_code, it.content.map(apiBlockToBlock)];
     }),
   );
+};
+
+export const takePageLanguage = (page: Page, path: string): ApiLanguage['code'] => {
+  return objectEntries(page.path).find((it) => it[1] === path)![0];
 };

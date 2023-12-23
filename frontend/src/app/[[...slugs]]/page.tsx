@@ -1,4 +1,4 @@
-import { takePageByPath } from '@/cms/pages/pages.helpers';
+import { takePageByPath, takePageLanguage } from '@/cms/pages/pages.helpers';
 import { getPages } from '@/cms/pages/pages.requests';
 import Layout from '@/components/layouts/layout/layout';
 import { pagesToHeaderProps } from '@/components/shared/layout/header/header.transformers';
@@ -17,8 +17,10 @@ const Page = async ({ params }: PageProps) => {
 
   if (page === undefined) return notFound();
 
+  const lang = takePageLanguage(page, path);
+
   return (
-    <Layout layout={page.layout} header={pagesToHeaderProps(pages)}>
+    <Layout layout={page.layout} lang={lang} header={pagesToHeaderProps(pages)}>
       <PageTemplate page={page} />
     </Layout>
   );

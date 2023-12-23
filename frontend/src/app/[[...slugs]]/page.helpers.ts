@@ -1,4 +1,4 @@
-import { takePageByPath } from '@/cms/pages/pages.helpers';
+import { takePageByPath, takePageLanguage } from '@/cms/pages/pages.helpers';
 import { getPages } from '@/cms/pages/pages.requests';
 import { Metadata } from 'next';
 import { slugsToPath } from './page.transformers';
@@ -11,11 +11,13 @@ export const getPageMetadata = async ({ params }: RouteMetadata): Promise<Metada
 
   if (page === undefined) return {};
 
+  const lang = takePageLanguage(page, path);
+
   return {
-    title: page.title,
+    title: page.seo[lang].title,
     openGraph: {
-      description: page.description ?? undefined,
-      images: page.image ? [page.image] : undefined,
+      description: page.seo[lang].description ?? undefined,
+      images: page.seo[lang].image ?? undefined,
     },
   };
 };
