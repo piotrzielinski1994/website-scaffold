@@ -1,15 +1,22 @@
+import { ApiLanguage } from '@packages/types';
 import { ApiPage, Page, Pages } from '@packages/types/pages/pages.types';
 
-export const takePagePath = (pages: ApiPage[], pageId: ApiPage['id']): Page['path'] => {
+export const takePagePaths = (pages: ApiPage[], pageId: ApiPage['id']): Page['path'] => {
   const page = pages.find((page) => page.id === pageId);
-
   if (!page) throw Error(`Page ${pageId} not found.`);
 
-  const slug = page.slug ?? '';
-  if (page.parent_page_id === null) return `/${slug}`;
+  const languages = page.translations.map((it) => it.languages_code);
 
-  const parentPagePath = takePagePath(pages, page.parent_page_id);
-  return `${parentPagePath}/${slug}`.replace(/\/\//g, '/');
+  const entries = languages.map((lang) => {
+    const slug = page.translations.find((it) => it.languages_code === lang)?.seo.slug ?? '';
+
+    if (page.parent_page === null) return [lang, `/${slug}`];
+
+    const parentPagePath = takePagePaths(pages, page.parent_page)[lang];
+    return [lang, `${parentPagePath}/${slug}`.replace(/\/\//g, '/')];
+  });
+
+  return Object.fromEntries(entries);
 };
 
 export const takePageByPath = (pages: Pages, path: Page['path']): Page | undefined => {

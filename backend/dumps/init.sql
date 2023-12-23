@@ -755,8 +755,8 @@ CREATE TABLE public.pages (
     created_at timestamp with time zone,
     updated_at timestamp with time zone,
     layout character varying(255) DEFAULT 'default'::character varying,
-    menu json DEFAULT '["main-menu"]'::json,
-    parent_page uuid
+    parent_page uuid,
+    menus json DEFAULT '["main-menu"]'::json
 );
 
 
@@ -1069,6 +1069,33 @@ COPY public.directus_activity (id, action, "user", "timestamp", ip, user_agent, 
 179	create	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:07:25.747+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	pages_translations	6	\N	http://localhost:3001
 180	create	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:07:25.75+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	pages	08355f74-b9fb-495a-bc02-e2ca8a3833e7	\N	http://localhost:3001
 181	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:07:25.753+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	pages	fe22a081-f7da-487f-a1bc-a2b448242f08	\N	http://localhost:3001
+182	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:10:05.231+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_collections	seo	\N	http://localhost:3001
+183	create	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:15:28.087+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	23	\N	http://localhost:3001
+184	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:15:31.905+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	23	\N	http://localhost:3001
+185	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:15:38.259+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	8	\N	http://localhost:3001
+186	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:15:38.276+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	11	\N	http://localhost:3001
+187	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:15:38.291+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	12	\N	http://localhost:3001
+188	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:15:38.309+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	10	\N	http://localhost:3001
+189	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:15:38.327+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	9	\N	http://localhost:3001
+190	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:15:38.346+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	23	\N	http://localhost:3001
+191	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:15:38.363+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	19	\N	http://localhost:3001
+192	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:15:38.377+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	22	\N	http://localhost:3001
+193	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:15:38.393+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	17	\N	http://localhost:3001
+194	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:15:38.409+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	13	\N	http://localhost:3001
+195	create	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:17:10.992+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	24	\N	http://localhost:3001
+198	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:18:01.777+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	25	\N	http://localhost:3001
+196	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:17:13.663+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	24	\N	http://localhost:3001
+197	create	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:17:58.902+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	25	\N	http://localhost:3001
+199	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:18:04.397+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	8	\N	http://localhost:3001
+200	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:18:04.41+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	11	\N	http://localhost:3001
+201	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:18:04.426+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	12	\N	http://localhost:3001
+202	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:18:04.44+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	10	\N	http://localhost:3001
+203	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:18:04.456+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	9	\N	http://localhost:3001
+204	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:18:04.475+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	25	\N	http://localhost:3001
+205	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:18:04.491+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	19	\N	http://localhost:3001
+206	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:18:04.507+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	22	\N	http://localhost:3001
+207	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:18:04.521+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	17	\N	http://localhost:3001
+208	update	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-23 20:18:04.537+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	directus_fields	13	\N	http://localhost:3001
 \.
 
 
@@ -1079,11 +1106,11 @@ COPY public.directus_activity (id, action, "user", "timestamp", ip, user_agent, 
 COPY public.directus_collections (collection, icon, note, display_template, hidden, singleton, translations, archive_field, archive_app_filter, archive_value, unarchive_value, sort_field, accountability, color, item_duplication_fields, sort, "group", collapse, preview_url, versioning) FROM stdin;
 languages	\N	\N	\N	f	f	\N	\N	t	\N	\N	\N	all	\N	\N	1	system	open	\N	f
 pages	\N	\N	\N	f	f	\N	\N	t	archived	draft	\N	all	\N	\N	1	content	open	\N	f
-seo	\N	\N	\N	t	f	\N	\N	t	\N	\N	\N	all	\N	\N	2	content	open	\N	f
 pages_translations	import_export	\N	\N	t	f	\N	\N	t	\N	\N	\N	all	\N	\N	1	pages	open	\N	f
 content	folder	\N	\N	f	f	[{"language":"en-US","translation":"Content"},{"language":"pl-PL","translation":"Treść"}]	\N	t	\N	\N	\N	all	\N	\N	1	\N	open	\N	f
 blocks	folder	\N	\N	f	f	[{"language":"en-US","translation":"Blocks"},{"language":"en-US","translation":"Bloki"}]	\N	t	\N	\N	\N	all	\N	\N	2	\N	open	\N	f
 system	folder	\N	\N	f	f	[{"language":"en-US","translation":"System"},{"language":"pl-PL","translation":"System"}]	\N	t	\N	\N	\N	all	\N	\N	3	\N	open	\N	f
+seo	\N	\N	{{title}}	t	f	\N	\N	t	\N	\N	\N	all	\N	\N	2	content	open	\N	f
 \.
 
 
@@ -1109,26 +1136,26 @@ COPY public.directus_extensions (name, enabled) FROM stdin;
 
 COPY public.directus_fields (id, collection, field, special, interface, options, display, display_options, readonly, hidden, sort, width, translations, note, conditions, required, "group", validation, validation_message) FROM stdin;
 1	languages	code	\N	input	\N	\N	\N	f	f	1	full	[{"language":"en-US","translation":"Code"},{"language":"pl-PL","translation":"Kod"}]	\N	\N	f	\N	\N	\N
+8	pages	id	uuid	input	\N	\N	\N	t	t	1	full	\N	\N	\N	f	\N	\N	\N
 7	languages	name	\N	input	\N	\N	\N	f	f	2	full	[{"language":"en-US","translation":"Name"},{"language":"pl-PL","translation":"Nazwa"}]	\N	\N	t	\N	\N	\N
 14	pages_translations	id	\N	\N	\N	\N	\N	f	t	1	full	\N	\N	\N	f	\N	\N	\N
 15	pages_translations	pages_id	\N	\N	\N	\N	\N	f	t	2	full	\N	\N	\N	f	\N	\N	\N
 16	pages_translations	languages_code	\N	\N	\N	\N	\N	f	t	3	full	\N	\N	\N	f	\N	\N	\N
-8	pages	id	uuid	input	\N	\N	\N	t	t	1	full	\N	\N	\N	f	\N	\N	\N
-3	seo	id	uuid	input	\N	\N	\N	t	t	1	full	\N	\N	\N	f	\N	\N	\N
 11	pages	created_at	date-created	datetime	\N	datetime	{"relative":true}	t	t	2	half	\N	\N	\N	f	\N	\N	\N
+3	seo	id	uuid	input	\N	\N	\N	t	t	1	full	\N	\N	\N	f	\N	\N	\N
+12	pages	updated_at	date-updated	datetime	\N	datetime	{"relative":true}	t	t	3	half	\N	\N	\N	f	\N	\N	\N
 4	seo	title	\N	input	\N	\N	\N	f	f	3	full	[{"language":"en-US","translation":"Title"},{"language":"pl-PL","translation":"Tytuł"}]	\N	\N	t	\N	\N	\N
 5	seo	description	\N	input-multiline	{"trim":true}	\N	\N	f	f	4	full	\N	\N	\N	f	\N	\N	\N
 6	seo	image	file	file-image	\N	\N	\N	f	f	5	full	\N	\N	\N	f	\N	\N	\N
 20	seo	slug	\N	input	{"clear":true,"slug":true,"trim":true}	\N	\N	f	f	2	full	\N	\N	\N	f	\N	\N	\N
 21	pages_translations	seo	m2o	select-dropdown-m2o	\N	\N	\N	f	f	4	full	\N	\N	\N	t	\N	\N	\N
-12	pages	updated_at	date-updated	datetime	\N	datetime	{"relative":true}	t	t	3	half	\N	\N	\N	f	\N	\N	\N
 10	pages	sort	\N	input	\N	\N	\N	f	t	4	full	\N	\N	\N	f	\N	\N	\N
 9	pages	status	\N	select-dropdown	{"choices":[{"text":"$t:published","value":"published"},{"text":"$t:draft","value":"draft"},{"text":"$t:archived","value":"archived"}]}	labels	{"showAsDot":true,"choices":[{"text":"$t:published","value":"published","foreground":"#FFFFFF","background":"var(--theme--primary)"},{"text":"$t:draft","value":"draft","foreground":"#18222F","background":"#D3DAE4"},{"text":"$t:archived","value":"archived","foreground":"#FFFFFF","background":"var(--theme--warning)"}]}	f	f	5	full	\N	\N	\N	f	\N	\N	\N
-18	pages	menu	cast-json	select-multiple-dropdown	{"choices":[{"text":"$t:Main_Menu","value":"main-menu"},{"text":"$t:Footer","value":"footer"}]}	\N	\N	f	f	6	half	[{"language":"en-US","translation":"Menu"},{"language":"pl-PL","translation":"Menu"}]	\N	\N	t	\N	\N	\N
+25	pages	menus	cast-json	select-multiple-dropdown	{"choices":[{"text":"$t:Main_Menu","value":"main-menu"},{"text":"$t:Footer","value":"footer"}],"allowNone":true}	\N	\N	f	f	6	half	[{"language":"en-US","translation":"Menu"},{"language":"pl-PL","translation":"Menu"}]	\N	\N	f	\N	\N	\N
+19	pages	parent_page	m2o	select-dropdown-m2o	\N	\N	\N	f	f	7	half	[{"language":"en-US","translation":"Parent Page"},{"language":"pl-PL","translation":"Strona - Rodzic"}]	\N	\N	f	\N	\N	\N
 22	pages	subpages	o2m	list-o2m-tree-view	\N	\N	\N	f	f	8	full	[{"language":"en-US","translation":"Subpages"},{"language":"pl-PL","translation":"Podstrony"}]	\N	\N	f	\N	\N	\N
 17	pages	layout	\N	select-dropdown	{"choices":[{"text":"$t:Default","value":"default"}]}	\N	\N	f	f	9	full	[{"language":"en-US","translation":"Layout"},{"language":"pl-PL","translation":"Układ"}]	\N	\N	t	\N	\N	\N
 13	pages	translations	translations	translations	{"languageField":"name","defaultLanguage":"en-US"}	\N	\N	f	f	10	full	[{"language":"en-US","translation":"Translations"},{"language":"pl-PL","translation":"Tłumaczenia"}]	\N	\N	t	\N	\N	\N
-19	pages	parent_page	m2o	select-dropdown-m2o	\N	\N	\N	f	f	7	half	[{"language":"en-US","translation":"Parent Page"},{"language":"pl-PL","translation":"Strona - Rodzic"}]	\N	\N	f	\N	\N	\N
 \.
 
 
@@ -1474,6 +1501,33 @@ COPY public.directus_revisions (id, activity, collection, item, data, delta, par
 178	179	pages_translations	6	{"seo":{"title":"Podstrona 2","slug":"podstrona-2"},"languages_code":{"code":"pl-PL"},"pages_id":"08355f74-b9fb-495a-bc02-e2ca8a3833e7"}	{"seo":{"title":"Podstrona 2","slug":"podstrona-2"},"languages_code":{"code":"pl-PL"},"pages_id":"08355f74-b9fb-495a-bc02-e2ca8a3833e7"}	179	\N
 180	181	pages	fe22a081-f7da-487f-a1bc-a2b448242f08	{"id":"fe22a081-f7da-487f-a1bc-a2b448242f08","status":"published","sort":null,"created_at":"2023-12-23T20:06:53.090Z","updated_at":"2023-12-23T20:07:25.736Z","layout":"default","menu":["main-menu"],"parent_page":"41449c2e-f83e-4fb5-bf48-80dbe7d3ffb8","subpages":["08355f74-b9fb-495a-bc02-e2ca8a3833e7"],"translations":[3,4]}	{"updated_at":"2023-12-23T20:07:25.736Z"}	\N	\N
 179	180	pages	08355f74-b9fb-495a-bc02-e2ca8a3833e7	{"status":"published","translations":{"create":[{"seo":{"title":"Subpage 2","slug":"subpage-2"},"languages_code":{"code":"en-US"}},{"seo":{"title":"Podstrona 2","slug":"podstrona-2"},"languages_code":{"code":"pl-PL"}}],"update":[],"delete":[]},"parent_page":"fe22a081-f7da-487f-a1bc-a2b448242f08"}	{"status":"published","translations":{"create":[{"seo":{"title":"Subpage 2","slug":"subpage-2"},"languages_code":{"code":"en-US"}},{"seo":{"title":"Podstrona 2","slug":"podstrona-2"},"languages_code":{"code":"pl-PL"}}],"update":[],"delete":[]},"parent_page":"fe22a081-f7da-487f-a1bc-a2b448242f08"}	180	\N
+181	182	directus_collections	seo	{"collection":"seo","icon":null,"note":null,"display_template":"{{title}}","hidden":true,"singleton":false,"translations":null,"archive_field":null,"archive_app_filter":true,"archive_value":null,"unarchive_value":null,"sort_field":null,"accountability":"all","color":null,"item_duplication_fields":null,"sort":2,"group":"content","collapse":"open","preview_url":null,"versioning":false}	{"display_template":"{{title}}"}	\N	\N
+182	183	directus_fields	23	{"sort":11,"interface":"select-dropdown","special":null,"options":{"choices":[{"text":"$t:Main_Menu","value":"main-menu"},{"text":"$t:Footer","value":"footer"}]},"translations":[{"language":"en-US","translation":"Menu"},{"language":"pl-PL","translation":"Menu"}],"collection":"pages","field":"menus"}	{"sort":11,"interface":"select-dropdown","special":null,"options":{"choices":[{"text":"$t:Main_Menu","value":"main-menu"},{"text":"$t:Footer","value":"footer"}]},"translations":[{"language":"en-US","translation":"Menu"},{"language":"pl-PL","translation":"Menu"}],"collection":"pages","field":"menus"}	\N	\N
+183	184	directus_fields	23	{"id":23,"collection":"pages","field":"menus","special":null,"interface":"select-dropdown","options":{"choices":[{"text":"$t:Main_Menu","value":"main-menu"},{"text":"$t:Footer","value":"footer"}]},"display":null,"display_options":null,"readonly":false,"hidden":false,"sort":11,"width":"half","translations":[{"language":"en-US","translation":"Menu"},{"language":"pl-PL","translation":"Menu"}],"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"menus","width":"half"}	\N	\N
+184	185	directus_fields	8	{"id":8,"collection":"pages","field":"id","special":["uuid"],"interface":"input","options":null,"display":null,"display_options":null,"readonly":true,"hidden":true,"sort":1,"width":"full","translations":null,"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"id","sort":1,"group":null}	\N	\N
+185	186	directus_fields	11	{"id":11,"collection":"pages","field":"created_at","special":["date-created"],"interface":"datetime","options":null,"display":"datetime","display_options":{"relative":true},"readonly":true,"hidden":true,"sort":2,"width":"half","translations":null,"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"created_at","sort":2,"group":null}	\N	\N
+186	187	directus_fields	12	{"id":12,"collection":"pages","field":"updated_at","special":["date-updated"],"interface":"datetime","options":null,"display":"datetime","display_options":{"relative":true},"readonly":true,"hidden":true,"sort":3,"width":"half","translations":null,"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"updated_at","sort":3,"group":null}	\N	\N
+187	188	directus_fields	10	{"id":10,"collection":"pages","field":"sort","special":null,"interface":"input","options":null,"display":null,"display_options":null,"readonly":false,"hidden":true,"sort":4,"width":"full","translations":null,"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"sort","sort":4,"group":null}	\N	\N
+188	189	directus_fields	9	{"id":9,"collection":"pages","field":"status","special":null,"interface":"select-dropdown","options":{"choices":[{"text":"$t:published","value":"published"},{"text":"$t:draft","value":"draft"},{"text":"$t:archived","value":"archived"}]},"display":"labels","display_options":{"showAsDot":true,"choices":[{"text":"$t:published","value":"published","foreground":"#FFFFFF","background":"var(--theme--primary)"},{"text":"$t:draft","value":"draft","foreground":"#18222F","background":"#D3DAE4"},{"text":"$t:archived","value":"archived","foreground":"#FFFFFF","background":"var(--theme--warning)"}]},"readonly":false,"hidden":false,"sort":5,"width":"full","translations":null,"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"status","sort":5,"group":null}	\N	\N
+189	190	directus_fields	23	{"id":23,"collection":"pages","field":"menus","special":null,"interface":"select-dropdown","options":{"choices":[{"text":"$t:Main_Menu","value":"main-menu"},{"text":"$t:Footer","value":"footer"}]},"display":null,"display_options":null,"readonly":false,"hidden":false,"sort":6,"width":"half","translations":[{"language":"en-US","translation":"Menu"},{"language":"pl-PL","translation":"Menu"}],"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"menus","sort":6,"group":null}	\N	\N
+190	191	directus_fields	19	{"id":19,"collection":"pages","field":"parent_page","special":["m2o"],"interface":"select-dropdown-m2o","options":null,"display":null,"display_options":null,"readonly":false,"hidden":false,"sort":7,"width":"half","translations":[{"language":"en-US","translation":"Parent Page"},{"language":"pl-PL","translation":"Strona - Rodzic"}],"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"parent_page","sort":7,"group":null}	\N	\N
+191	192	directus_fields	22	{"id":22,"collection":"pages","field":"subpages","special":["o2m"],"interface":"list-o2m-tree-view","options":null,"display":null,"display_options":null,"readonly":false,"hidden":false,"sort":8,"width":"full","translations":[{"language":"en-US","translation":"Subpages"},{"language":"pl-PL","translation":"Podstrony"}],"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"subpages","sort":8,"group":null}	\N	\N
+192	193	directus_fields	17	{"id":17,"collection":"pages","field":"layout","special":null,"interface":"select-dropdown","options":{"choices":[{"text":"$t:Default","value":"default"}]},"display":null,"display_options":null,"readonly":false,"hidden":false,"sort":9,"width":"full","translations":[{"language":"en-US","translation":"Layout"},{"language":"pl-PL","translation":"Układ"}],"note":null,"conditions":null,"required":true,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"layout","sort":9,"group":null}	\N	\N
+193	194	directus_fields	13	{"id":13,"collection":"pages","field":"translations","special":["translations"],"interface":"translations","options":{"languageField":"name","defaultLanguage":"en-US"},"display":null,"display_options":null,"readonly":false,"hidden":false,"sort":10,"width":"full","translations":[{"language":"en-US","translation":"Translations"},{"language":"pl-PL","translation":"Tłumaczenia"}],"note":null,"conditions":null,"required":true,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"translations","sort":10,"group":null}	\N	\N
+194	195	directus_fields	24	{"sort":11,"interface":"select-multiple-dropdown","special":["cast-json"],"options":{"allowNone":true,"choices":[{"text":"$t:Main_Menu","value":"main-menu"},{"text":"$t:Footer","value":"footer"}]},"translations":[{"language":"en-US","translation":"Menu"},{"language":"pl-PL","translation":"Menu"}],"collection":"pages","field":"meuns"}	{"sort":11,"interface":"select-multiple-dropdown","special":["cast-json"],"options":{"allowNone":true,"choices":[{"text":"$t:Main_Menu","value":"main-menu"},{"text":"$t:Footer","value":"footer"}]},"translations":[{"language":"en-US","translation":"Menu"},{"language":"pl-PL","translation":"Menu"}],"collection":"pages","field":"meuns"}	\N	\N
+197	198	directus_fields	25	{"id":25,"collection":"pages","field":"menus","special":["cast-json"],"interface":"select-multiple-dropdown","options":{"choices":[{"text":"$t:Main_Menu","value":"main-menu"},{"text":"$t:Footer","value":"footer"}],"allowNone":true},"display":null,"display_options":null,"readonly":false,"hidden":false,"sort":11,"width":"half","translations":[{"language":"en-US","translation":"Menu"},{"language":"pl-PL","translation":"Menu"}],"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"menus","width":"half"}	\N	\N
+195	196	directus_fields	24	{"id":24,"collection":"pages","field":"meuns","special":["cast-json"],"interface":"select-multiple-dropdown","options":{"allowNone":true,"choices":[{"text":"$t:Main_Menu","value":"main-menu"},{"text":"$t:Footer","value":"footer"}]},"display":null,"display_options":null,"readonly":false,"hidden":false,"sort":11,"width":"half","translations":[{"language":"en-US","translation":"Menu"},{"language":"pl-PL","translation":"Menu"}],"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"meuns","width":"half"}	\N	\N
+196	197	directus_fields	25	{"sort":11,"interface":"select-multiple-dropdown","special":["cast-json"],"options":{"choices":[{"text":"$t:Main_Menu","value":"main-menu"},{"text":"$t:Footer","value":"footer"}],"allowNone":true},"translations":[{"language":"en-US","translation":"Menu"},{"language":"pl-PL","translation":"Menu"}],"collection":"pages","field":"menus"}	{"sort":11,"interface":"select-multiple-dropdown","special":["cast-json"],"options":{"choices":[{"text":"$t:Main_Menu","value":"main-menu"},{"text":"$t:Footer","value":"footer"}],"allowNone":true},"translations":[{"language":"en-US","translation":"Menu"},{"language":"pl-PL","translation":"Menu"}],"collection":"pages","field":"menus"}	\N	\N
+198	199	directus_fields	8	{"id":8,"collection":"pages","field":"id","special":["uuid"],"interface":"input","options":null,"display":null,"display_options":null,"readonly":true,"hidden":true,"sort":1,"width":"full","translations":null,"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"id","sort":1,"group":null}	\N	\N
+199	200	directus_fields	11	{"id":11,"collection":"pages","field":"created_at","special":["date-created"],"interface":"datetime","options":null,"display":"datetime","display_options":{"relative":true},"readonly":true,"hidden":true,"sort":2,"width":"half","translations":null,"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"created_at","sort":2,"group":null}	\N	\N
+200	201	directus_fields	12	{"id":12,"collection":"pages","field":"updated_at","special":["date-updated"],"interface":"datetime","options":null,"display":"datetime","display_options":{"relative":true},"readonly":true,"hidden":true,"sort":3,"width":"half","translations":null,"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"updated_at","sort":3,"group":null}	\N	\N
+201	202	directus_fields	10	{"id":10,"collection":"pages","field":"sort","special":null,"interface":"input","options":null,"display":null,"display_options":null,"readonly":false,"hidden":true,"sort":4,"width":"full","translations":null,"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"sort","sort":4,"group":null}	\N	\N
+202	203	directus_fields	9	{"id":9,"collection":"pages","field":"status","special":null,"interface":"select-dropdown","options":{"choices":[{"text":"$t:published","value":"published"},{"text":"$t:draft","value":"draft"},{"text":"$t:archived","value":"archived"}]},"display":"labels","display_options":{"showAsDot":true,"choices":[{"text":"$t:published","value":"published","foreground":"#FFFFFF","background":"var(--theme--primary)"},{"text":"$t:draft","value":"draft","foreground":"#18222F","background":"#D3DAE4"},{"text":"$t:archived","value":"archived","foreground":"#FFFFFF","background":"var(--theme--warning)"}]},"readonly":false,"hidden":false,"sort":5,"width":"full","translations":null,"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"status","sort":5,"group":null}	\N	\N
+203	204	directus_fields	25	{"id":25,"collection":"pages","field":"menus","special":["cast-json"],"interface":"select-multiple-dropdown","options":{"choices":[{"text":"$t:Main_Menu","value":"main-menu"},{"text":"$t:Footer","value":"footer"}],"allowNone":true},"display":null,"display_options":null,"readonly":false,"hidden":false,"sort":6,"width":"half","translations":[{"language":"en-US","translation":"Menu"},{"language":"pl-PL","translation":"Menu"}],"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"menus","sort":6,"group":null}	\N	\N
+204	205	directus_fields	19	{"id":19,"collection":"pages","field":"parent_page","special":["m2o"],"interface":"select-dropdown-m2o","options":null,"display":null,"display_options":null,"readonly":false,"hidden":false,"sort":7,"width":"half","translations":[{"language":"en-US","translation":"Parent Page"},{"language":"pl-PL","translation":"Strona - Rodzic"}],"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"parent_page","sort":7,"group":null}	\N	\N
+205	206	directus_fields	22	{"id":22,"collection":"pages","field":"subpages","special":["o2m"],"interface":"list-o2m-tree-view","options":null,"display":null,"display_options":null,"readonly":false,"hidden":false,"sort":8,"width":"full","translations":[{"language":"en-US","translation":"Subpages"},{"language":"pl-PL","translation":"Podstrony"}],"note":null,"conditions":null,"required":false,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"subpages","sort":8,"group":null}	\N	\N
+206	207	directus_fields	17	{"id":17,"collection":"pages","field":"layout","special":null,"interface":"select-dropdown","options":{"choices":[{"text":"$t:Default","value":"default"}]},"display":null,"display_options":null,"readonly":false,"hidden":false,"sort":9,"width":"full","translations":[{"language":"en-US","translation":"Layout"},{"language":"pl-PL","translation":"Układ"}],"note":null,"conditions":null,"required":true,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"layout","sort":9,"group":null}	\N	\N
+207	208	directus_fields	13	{"id":13,"collection":"pages","field":"translations","special":["translations"],"interface":"translations","options":{"languageField":"name","defaultLanguage":"en-US"},"display":null,"display_options":null,"readonly":false,"hidden":false,"sort":10,"width":"full","translations":[{"language":"en-US","translation":"Translations"},{"language":"pl-PL","translation":"Tłumaczenia"}],"note":null,"conditions":null,"required":true,"group":null,"validation":null,"validation_message":null}	{"collection":"pages","field":"translations","sort":10,"group":null}	\N	\N
 \.
 
 
@@ -1491,7 +1545,7 @@ COPY public.directus_roles (id, name, icon, description, ip_access, enforce_tfa,
 --
 
 COPY public.directus_sessions (token, "user", expires, ip, user_agent, share, origin) FROM stdin;
-m5zfpb4Biksueoc5NqL-h7K3vnjYNGnPmbDhIonIWXPpRzi583SZLaXNCKR_-dpJ	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-30 20:03:04.03+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	\N	http://localhost:3001
+O05oSRLfIsAajfMrWpx8UFC0EpiTjkIo9ywu_iVUalYDx71vqblgxWd005H2Bo56	fc0ef3e9-0944-4dae-aedd-c1616608ece1	2023-12-30 20:17:54.058+00	172.23.0.1	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0	\N	http://localhost:3001
 \.
 
 
@@ -1530,7 +1584,7 @@ c2db5f24-d803-4073-a02d-92e8bc0c16dd	en-US	Footer	Footer
 --
 
 COPY public.directus_users (id, first_name, last_name, email, password, location, title, description, tags, avatar, language, tfa_secret, status, role, token, last_access, last_page, provider, external_identifier, auth_data, email_notifications, appearance, theme_dark, theme_light, theme_light_overrides, theme_dark_overrides) FROM stdin;
-fc0ef3e9-0944-4dae-aedd-c1616608ece1	Admin	User	admin@website-scaffold.com	$argon2id$v=19$m=65536,t=3,p=4$MC55510axkkS8/c7PYz1qQ$ZYSd0kW5p1o+ca2YEtn7q1Xqr9xueLtwPEzLFMCjvfo	\N	\N	\N	\N	\N	\N	\N	active	1d9ca1b2-6385-4ddc-8aa6-463cb540309b	\N	2023-12-23 20:03:04.033+00	/content/pages/41449c2e-f83e-4fb5-bf48-80dbe7d3ffb8	default	\N	\N	t	\N	\N	\N	\N	\N
+fc0ef3e9-0944-4dae-aedd-c1616608ece1	Admin	User	admin@website-scaffold.com	$argon2id$v=19$m=65536,t=3,p=4$MC55510axkkS8/c7PYz1qQ$ZYSd0kW5p1o+ca2YEtn7q1Xqr9xueLtwPEzLFMCjvfo	\N	\N	\N	\N	\N	\N	\N	active	1d9ca1b2-6385-4ddc-8aa6-463cb540309b	NrEvaa2mhaMfEWI_X-LrWeD4Lj2FVSZT	2023-12-23 20:17:54.061+00	/content/pages/41449c2e-f83e-4fb5-bf48-80dbe7d3ffb8	default	\N	\N	t	\N	\N	\N	\N	\N
 \.
 
 
@@ -1564,10 +1618,10 @@ pl-PL	Polski
 -- Data for Name: pages; Type: TABLE DATA; Schema: public; Owner: website-scaffold
 --
 
-COPY public.pages (id, status, sort, created_at, updated_at, layout, menu, parent_page) FROM stdin;
-41449c2e-f83e-4fb5-bf48-80dbe7d3ffb8	published	\N	2023-12-23 20:05:34.749+00	\N	default	["main-menu"]	\N
-fe22a081-f7da-487f-a1bc-a2b448242f08	published	\N	2023-12-23 20:06:53.09+00	2023-12-23 20:07:25.736+00	default	["main-menu"]	41449c2e-f83e-4fb5-bf48-80dbe7d3ffb8
-08355f74-b9fb-495a-bc02-e2ca8a3833e7	published	\N	2023-12-23 20:07:25.737+00	\N	default	["main-menu"]	fe22a081-f7da-487f-a1bc-a2b448242f08
+COPY public.pages (id, status, sort, created_at, updated_at, layout, parent_page, menus) FROM stdin;
+41449c2e-f83e-4fb5-bf48-80dbe7d3ffb8	published	\N	2023-12-23 20:05:34.749+00	\N	default	\N	["main-menu"]
+fe22a081-f7da-487f-a1bc-a2b448242f08	published	\N	2023-12-23 20:06:53.09+00	2023-12-23 20:07:25.736+00	default	41449c2e-f83e-4fb5-bf48-80dbe7d3ffb8	["main-menu"]
+08355f74-b9fb-495a-bc02-e2ca8a3833e7	published	\N	2023-12-23 20:07:25.737+00	\N	default	fe22a081-f7da-487f-a1bc-a2b448242f08	["main-menu"]
 \.
 
 
@@ -1603,14 +1657,14 @@ COPY public.seo (id, title, description, image, slug) FROM stdin;
 -- Name: directus_activity_id_seq; Type: SEQUENCE SET; Schema: public; Owner: website-scaffold
 --
 
-SELECT pg_catalog.setval('public.directus_activity_id_seq', 181, true);
+SELECT pg_catalog.setval('public.directus_activity_id_seq', 208, true);
 
 
 --
 -- Name: directus_fields_id_seq; Type: SEQUENCE SET; Schema: public; Owner: website-scaffold
 --
 
-SELECT pg_catalog.setval('public.directus_fields_id_seq', 22, true);
+SELECT pg_catalog.setval('public.directus_fields_id_seq', 25, true);
 
 
 --
@@ -1645,7 +1699,7 @@ SELECT pg_catalog.setval('public.directus_relations_id_seq', 5, true);
 -- Name: directus_revisions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: website-scaffold
 --
 
-SELECT pg_catalog.setval('public.directus_revisions_id_seq', 180, true);
+SELECT pg_catalog.setval('public.directus_revisions_id_seq', 207, true);
 
 
 --

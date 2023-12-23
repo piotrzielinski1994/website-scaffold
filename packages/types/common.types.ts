@@ -45,3 +45,10 @@ export interface Image {
 }
 
 // ==========================================
+
+export interface ApiLanguage {
+  code: 'en-US' | 'pl-PL';
+  name: string;
+}
+
+// ==========================================

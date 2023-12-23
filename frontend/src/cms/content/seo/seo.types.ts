@@ -6,3 +6,10 @@ export interface ApiSeo extends ApiModel {
   description: string | null;
   image: string | null;
 }
+
+export interface Seo {
+  url: string;
+  title: ApiSeo['title'];
+  description: ApiSeo['description'];
+  image: ApiSeo['image'];
+}

@@ -4,7 +4,7 @@ import { apiPagesToPagesCollection } from './pages.transformers';
 
 export const getPages = async (): Promise<Pages> => {
   const apiPages = await cmsClient.get<ApiPage[]>(
-    '/items/pages?fields=*,content.collection,content.item.*.*',
+    '/items/pages?fields=*,translations.languages_code,translations.seo.*',
   );
 
   return apiPagesToPagesCollection(apiPages);

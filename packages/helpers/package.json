@@ -1,0 +1,14 @@
+{
+  "name": "@packages/entries",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {},
+  "devDependencies": {
+    "@packages/configs": "*",
+    "@packages/eslint-config": "*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -17,7 +17,7 @@ const pageIdToMenuItem =
     const page = pages[pageId];
     if (!page) throw Error(`Page ${pageId} not found.`);
 
-    if (!page.isVisibleInNavbar) return undefined;
+    if (!page.menus) return undefined;
 
     const items = page.subpages
       .map(pageIdToMenuItem(pages))
