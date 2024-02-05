@@ -11,7 +11,6 @@ const LanguageProvider = ({ lang, children }: LanguageProviderProps) => {
 };
 
 export const useLanguage = () => {
-  console.log('@@@ asd | ');
   return useContext(LanguageContext);
 };
 
