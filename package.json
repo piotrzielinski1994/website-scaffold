@@ -10,18 +10,19 @@
   "scripts": {
     "start": "docker-compose up",
     "reset": "docker-compose down --volumes --remove-orphans",
-    "setup": "ln -s docker-compose.dev.yaml docker-compose.yaml && ln -s .env.example .env"
+    "setup": "ln -s docker-compose.dev.yaml docker-compose.yaml && ln -s .env.example .env",
+    "upgrade": "ncu -u && npm update"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
-    "@types/node": "^20.10.5",
-    "eslint": "^8.50.0",
-    "typescript": "^5.2.2",
-    "lint-staged": "^15.2.0",
-    "prettier": "^3.0.3"
+    "@types/node": "^20.11.16",
+    "eslint": "^8.56.0",
+    "lint-staged": "^15.2.2",
+    "npm-check-updates": "^16.14.14",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
   },
   "engines": {
     "node": ">=20.0.0"
