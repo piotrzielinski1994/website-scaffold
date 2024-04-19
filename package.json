@@ -2,8 +2,11 @@
   "name": "website-scaffold",
   "version": "0.1.0",
   "description": "Base scaffold for websites with CMS",
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "cms",
+    "fullstack"
+  ],
+  "author": "Piotr Zieliński",
   "license": "ISC",
   "engines": {
     "node": ">=20.0.0"

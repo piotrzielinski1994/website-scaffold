@@ -23,6 +23,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/layouts/*": ["./src/components/layouts/*"],
+      "@/shared/*": ["./src/components/shared/*"],
       "@/templates/*": ["./src/components/templates/*"],
       "@/api/*": ["src/cms/*"]
     }

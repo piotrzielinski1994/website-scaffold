@@ -52,3 +52,9 @@ export interface ApiLanguage {
 }
 
 // ==========================================
+
+export interface WithChildren {
+  children?: React.ReactNode;
+}
+
+// ==========================================

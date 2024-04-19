@@ -3,6 +3,7 @@ import { NavbarProps } from './navbar.types';
 import NavItem from './components/nav-item/nav-item';
 
 const Navbar = ({ items }: NavbarProps) => {
+  console.log('@@@ items | ', items);
   return (
     <nav>
       <ul>
