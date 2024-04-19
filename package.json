@@ -2,6 +2,12 @@
   "name": "website-scaffold",
   "version": "0.1.0",
   "description": "Base scaffold for websites with CMS",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "workspaces": [
     "packages/*",
     "backend",
@@ -13,18 +19,12 @@
     "setup": "ln -s docker-compose.dev.yaml docker-compose.yaml && ln -s .env.example .env",
     "upgrade": "ncu -u && npm update"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.11.16",
-    "eslint": "^8.56.0",
+    "@types/node": "^20.12.7",
+    "eslint": "^9.0.0",
     "lint-staged": "^15.2.2",
-    "npm-check-updates": "^16.14.14",
+    "npm-check-updates": "^16.14.18",
     "prettier": "^3.2.5",
-    "typescript": "^5.3.3"
-  },
-  "engines": {
-    "node": ">=20.0.0"
+    "typescript": "^5.4.5"
   }
 }
