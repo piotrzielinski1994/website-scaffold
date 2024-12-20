@@ -2,7 +2,7 @@ version: '3'
 
 services:
   frontend:
-    image: node:20
+    image: node:22
     working_dir: /app
     command: npm start -w frontend
     restart: unless-stopped
@@ -19,7 +19,7 @@ services:
       - ${FRONTEND_PORT:-3002}:${FRONTEND_PORT:-3002}
 
   backend:
-    image: node:20
+    image: node:22
     working_dir: /app
     # tty: true
     command: bash -c "npm run setup -w backend && npm start -w backend"

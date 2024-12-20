@@ -20,7 +20,7 @@
     "start": "docker-compose up",
     "reset": "docker-compose down --volumes --remove-orphans",
     "setup": "ln -s docker-compose.dev.yaml docker-compose.yaml && ln -s .env.example .env",
-    "upgrade": "ncu -u && npm update"
+    "upgrade": "ncu -ws -u && npm update"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",

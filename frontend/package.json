@@ -14,17 +14,17 @@
     "@packages/api": "*",
     "@packages/configs": "*",
     "@packages/helpers": "*",
-    "next": "^14.0.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "styled-components": "^6.0.8"
+    "next": "^15.1.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "@packages/eslint-config": "*",
     "@packages/types": "*",
-    "eslint-config-next": "^14.0.4",
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.18"
+    "eslint-config-next": "^15.1.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2"
   },
   "lint-staged": {
     "./**/*.{js,jsx,ts,tsx}": [
